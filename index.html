@@ -1,0 +1,58 @@
+<html>
+	<head>
+			<meta charset="utf-8">
+				<title>@Sign up </title>
+		<link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
+		<script src="inc/jquery.js"></script>
+	</head>
+
+<body>
+<div id="alert" >
+	<div class="jumbotron" style="margin:5%;">
+		<div class="container">
+			<div class="header">
+				<h2>
+					<blink>Sign up <img src="code.png" alt="codexpo"></blink>
+				</h2>
+			</div>
+			<form onsubmit=" validate()" class="form-group" action="#" method="post">
+				<input class="form-control" type="text"autocomplete="on" placeholder="Enter your full name"><br>
+					<input class="form-control" placeholder="Enter your username"  type="text" required><br>
+						<input id="pass1" class="form-control" type="password" placeholder="Enter your password" required><br>
+							<input   id="pass2" onblur="check_p()"  class="form-control" type="password" placeholder="REnter your password" required><br>
+							<input type="submit" class="btn btn-info" value="Submit">
+			</form>
+		</div>
+	</div>
+	<center><button onclick="toggle()" class="btn btn-warning">show/hide sign up page</button></center>
+</div>
+
+<button class="btn btn-success" onclick="window.print()">Print</button>
+
+<script>
+	function check_p()
+	{
+	
+	}
+	
+	function validate()
+	{
+			if ($("#pass1").val() == $("#pass2").val())
+		{
+			alert("password matches");
+			return 1;
+		}
+		else alert("password are different");
+		return 0;
+		
+		
+	}
+	
+	function toggle()
+	{
+		$(".jumbotron").toggle(500);
+		
+	}
+</script>
+</body>
+</html>
