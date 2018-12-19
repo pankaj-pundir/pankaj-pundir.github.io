@@ -1,58 +1,670 @@
-<html>
-	<head>
-			<meta charset="utf-8">
-				<title>@Sign up </title>
-		<link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
-		<script src="inc/jquery.js"></script>
-	</head>
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Pankaj Pundir</title>
+	<meta name="description" content="portfolio">
+	<meta name="author" content="Pankaj-pundir">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+
+</head>
 
 <body>
-<div id="alert" >
-	<div class="jumbotron" style="margin:5%;">
-		<div class="container">
-			<div class="header">
-				<h2>
-					<blink>Sign up <img src="code.png" alt="codexpo"></blink>
-				</h2>
-			</div>
-			<form onsubmit=" validate()" class="form-group" action="#" method="post">
-				<input class="form-control" type="text"autocomplete="on" placeholder="Enter your full name"><br>
-					<input class="form-control" placeholder="Enter your username"  type="text" required><br>
-						<input id="pass1" class="form-control" type="password" placeholder="Enter your password" required><br>
-							<input   id="pass2" onblur="check_p()"  class="form-control" type="password" placeholder="REnter your password" required><br>
-							<input type="submit" class="btn btn-info" value="Submit">
-			</form>
-		</div>
-	</div>
-	<center><button onclick="toggle()" class="btn btn-warning">show/hide sign up page</button></center>
-</div>
 
-<button class="btn btn-success" onclick="window.print()">Print</button>
+   <!-- Header
+   ================================================== -->
+   <header id="home">
 
-<script>
-	function check_p()
-	{
-	
-	}
-	
-	function validate()
-	{
-			if ($("#pass1").val() == $("#pass2").val())
-		{
-			alert("password matches");
-			return 1;
-		}
-		else alert("password are different");
-		return 0;
-		
-		
-	}
-	
-	function toggle()
-	{
-		$(".jumbotron").toggle(500);
-		
-	}
-</script>
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
+            <li><a class="smoothscroll" href="#portfolio">Works</a></li>
+   
+            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline" style="color: rgb(255,255,255); text-shadow: 3px 3px 5px black;">Hey, I'm Pankaj Pundir.</h1>
+            <h3 style="color: rgb(255,255,255); text-shadow: 3px 3px 8px black;">I'm a <span>BTech Student</span>, pursuing <span> Computer Science And Engineering.</span> I'm skilled at <span>Computer vision, Deep learning , Desktop application (Kivy) and webdesigning. </span>The need to make a <span>General AI </span> is the driving force of my <q>professional life</q>.<a class="smoothscroll" href="#about"> Start scrolling</a>
+            and learn more <a class="smoothscroll" href="#about">about me</a> and <a class="smoothscroll" href="#portfolio">my work</a>.</h3>
+            <hr />
+            <ul class="social" >
+            <!--    <li style="background-color: rgba(0,0,200,0.4); box-shadow: 1px 1px 8px blue;"><a href="https://www.facebook.com/pankaj.pundir.92"><i class="fa fa-facebook"></i></a></li>
+               <li style="background-color: rgba(0,0,250,0.4); box-shadow: 1px 1px 8px blue;"><a href="https://www.twitter.com/thunder_science"><i class="fa fa-twitter"></i></a></li>
+                <li style="background-color: rgba(0,0,170,0.6); box-shadow: 1px 1px 7px blue;"><a href="https://www.linkedin.com/in/pankaj-pundir"><i class="fa fa-linkedin"></i></a></li>
+               
+               <li><a href="#"><i class="fa fa-dribbble"></i></a></li> 
+               <li style="background-color: rgba(0,0,120,0.5); box-shadow: 1px 1px 8px blue;"><a href="#"><i class="fa fa-skype"></i></a></li>
+ -->
+
+
+
+               <li ><a href="https://www.facebook.com/pankaj.pundir.92"><i class="fa fa-facebook"></i></a></li>
+               <li style=" box-shadow: 3px 3px 25px black;"><a href="https://www.twitter.com/thunder_science"><i class="fa fa-twitter"></i></a></li>
+                <li style="box-shadow: 3px 3px 25px black;"><a href="https://www.linkedin.com/in/pankaj-pundir"><i class="fa fa-linkedin"></i></a></li>
+         
+               <li ><a href="https://www.skype.com/pankaj.pundir369"><i class="fa fa-skype"></i></a></li>
+
+
+
+            </ul>
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> <!-- Header End -->
+
+
+   <!-- About Section
+   ================================================== -->
+   <section id="about">
+
+      <div class="row">
+
+         <div class="three columns">
+
+            <img class="profile-pic"  style="width: 15em;height: 15em" src="images/profilepic.jpg" alt="" />
+
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>About Me</h2>
+
+            <p>I'm a Computer Science student with skillfull knowledge of Python and C++. My dream is to create <u>A General AI</u> and assist needy ones.  My technical skills involve <b>Computer vision, machine learning , Deep learning and Kivy (software development)</b>,which will ultimately lead to the track of Artificial intelligence. Some of my hobbies include <i><b> watching movies,</b></i><i><b> travelling and</b></i> <i><b>competitive coding</b></i>. The curiosity in me directed me to learn meditation and hypnotism. I enjoy researching about spiritual world and the powers a human can posses. Finding the magic's secret led me to understand and perform few of the card tricks. All this random skills helps me find patterns in the real world and understand people around me.<br> <i> You can wish me on 20 January </i>.
+
+            </p>
+
+            <div class="row">
+
+              <!--  <div class="columns contact-details">
+
+                  <h2>Contact Details</h2>
+                  <p class="address">
+						   <span>Jonathan Doe</span><br>
+						   <span>1600 Amphitheatre Parkway<br>
+						         Mountain View, CA 94043 US
+                     </span><br>
+						   <span>(123)456-7890</span><br>
+                     <span>anyone@website.com</span>
+					   </p>
+
+               </div> -->
+
+               <div class="columns download">
+                  <p>
+                     <a href="resume.pdf" class="button"><i class="fa fa-download"></i>Download Resume</a>
+                  </p>
+               </div>
+
+            </div> <!-- end row -->
+
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+
+
+   <!-- Resume Section
+   ================================================== -->
+   <section id="resume">
+
+      <!-- Education
+      ----------------------------------------------- -->
+      <div class="row education">
+
+         <div class="three columns header-col">
+            <h1><span>Education</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>This sectio is under construction</h3>
+                  <p class="info">Master in Graphic Design <span>&bull;</span> <em class="date">April 2007</em></p>
+
+                  <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                  ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>School of Cool Designers</h3>
+                  <p class="info">B.A. Degree in Graphic Design <span>&bull;</span> <em class="date">March 2003</em></p>
+
+                  <p>
+                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
+                  ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Education -->
+
+
+      <!-- Work
+      ----------------------------------------------- -->
+      <div class="row work">
+
+         <div class="three columns header-col">
+            <h1><span>Work</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Awesome Design Studio</h3>
+                  <p class="info">Senior UX Designer <span>&bull;</span> <em class="date">March 2010 - Present</em></p>
+
+                  <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                  ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Super Cool Studio</h3>
+                  <p class="info">UX Designer <span>&bull;</span> <em class="date">March 2007 - February 2010</em></p>
+
+                  <p>
+                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
+                  ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Work -->
+
+
+      <!-- Skills
+      ----------------------------------------------- -->
+      <div class="row skill">
+
+         <div class="three columns header-col">
+            <h1><span>Skills</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <p>Some skills that I posses
+            </p>
+
+			<!-- 	<div class="bars">
+
+				   <ul class="skills">
+					   <li><span class="bar-expand photoshop"></span><em>Photoshop</em></li>
+                  <li><span class="bar-expand illustrator"></span><em>Illustrator</em></li>
+						<li><span class="bar-expand wordpress"></span><em>Wordpress</em></li>
+						<li><span class="bar-expand css"></span><em>CSS</em></li>
+						<li><span class="bar-expand html5"></span><em>HTML5</em></li>
+                  <li><span class="bar-expand jquery"></span><em>jQuery</em></li>
+					</ul>
+
+				</div> --> <!-- end skill-bars -->
+
+			</div> <!-- main-col end -->
+
+      </div> <!-- End skills -->
+
+   </section> <!-- Resume Section End-->
+
+
+   <!-- Portfolio Section
+   ================================================== -->
+   <section id="portfolio">
+
+      <div class="row">
+
+         <div class="twelve columns collapsed">
+
+            <h1>Check Out Some of My Works.</h1>
+
+            <!-- portfolio-wrapper -->
+            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+
+          	   <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-01" title="">
+                        <img alt="" src="images/portfolio/coffee.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Coffee</h5>
+                              <p>Illustrration</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-02" title="">
+                        <img alt="" src="images/portfolio/console.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Console</h5>
+                              <p>Web Development</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-03" title="">
+                        <img alt="" src="images/portfolio/judah.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Judah</h5>
+                              <p>Webdesign</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-04" title="">
+                        <img alt="" src="images/portfolio/into-the-light.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Into The Light</h5>
+                              <p>Photography</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-05" title="">
+                        <img alt="" src="images/portfolio/farmerboy.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Farmer Boy</h5>
+                              <p>Branding</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-06" title="">
+                        <img alt="" src="images/portfolio/girl.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Girl</h5>
+                              <p>Photography</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-07" title="">
+                        <img alt="" src="images/portfolio/origami.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Origami</h5>
+                              <p>Illustrration</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-08" title="">
+                        <img alt="" src="images/portfolio/retrocam.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Retrocam</h5>
+                              <p>Web Development</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div>  <!-- item end -->
+
+            </div> <!-- portfolio-wrapper end -->
+
+         </div> <!-- twelve columns end -->
+
+<!-- 
+         <!-- Modal Popup
+	      --------------------------------------------------------------- -->
+
+         <div id="modal-01" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-coffee.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Coffee Cup</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-01 End --> -->
+
+         <div id="modal-02" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-console.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Console</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding, Web Development</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-02 End -->
+
+         <div id="modal-03" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-judah.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Judah</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-03 End -->
+
+         <div id="modal-04" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-intothelight.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Into the Light</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Photography</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-04 End -->
+
+         <div id="modal-05" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-farmerboy.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Farmer Boy</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-05 End -->
+
+         <div id="modal-06" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-girl.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Girl</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Photography</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-06 End -->
+
+         <div id="modal-07" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-origami.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Origami</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding, Illustration</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-07 End -->
+
+         <div id="modal-08" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-retrocam.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Retrocam</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Webdesign, Photography</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-01 End -->
+
+
+      </div> <!-- row End -->
+
+   </section> <!-- Portfolio Section End-->
+
+
+
+   <!-- Contact Section
+   ================================================== -->
+   <section id="contact">
+<div style="width: 80%; overflow: hidden; margin-left: 10%; ">
+         <div c style="width: 30%; float: left; padding-left: 5%">
+
+            <div class="two columns header-col">
+
+               <h1><span>Get In Touch.</span></h1>
+
+               <p>pankaj.pundir369@gmail.com</p>
+               <!-- Git-Hub : pankaj-pundir</p>
+               LinkedIn :<a href="https://www.linkedin.com/in/pankaj-pundir">pankaj-pundir</a></p> --> 
+            </div>
+
+         </div>
+
+         <div class="row">
+
+           
+
+
+            <aside class="four columns footer-widgets">
+
+               <div  style="margin-left: 90%;  width: 80%">
+
+					   <h4>Address and Phone</h4>
+					   <p class="address">
+						   Pankaj Pundir<br>
+						   B-160 , sector-4, defence colony<br>
+						   Dehradun, uttarakhand , India<br>
+                     248001<br>
+						   <span>Mobile Number 789-528-9895</span>
+					   </p>
+
+				   </div>
+
+            </aside>
+
+      </div>
+
+   </div>
+
+   </section> <!-- Contact Section End-->
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+               <li><a href="https://www.facebook.com/pankaj.pundir.92"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://www.twitter.com/thunder_science"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/pankaj-pundir"><i class="fa fa-linkedin"></i></a></li>
+               
+              
+               <li><a href="https://www.skype.com/pankaj.pundir369"><i class="fa fa-skype"></i></a></li>
+            </ul>
+
+            
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
+
 </body>
+
 </html>
