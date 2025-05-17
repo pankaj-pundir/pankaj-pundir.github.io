@@ -15,6 +15,10 @@ firebase init
 
 # to deploy the changes to the project
 firebase deploy --only hosting
+
+
+
+npm run export
 ```
 
 Project Console: https://console.firebase.google.com/project/pankaj-pundir/overview
