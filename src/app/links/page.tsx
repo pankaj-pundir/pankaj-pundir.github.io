@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -10,7 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { categorizeWebsite } from '@/ai/flows/website-categorizer';
 import type { LinkItem, LinkCategory } from '@/lib/types';
-import { ExternalLink, Link2 as LinkIcon, Loader2, Tag } from 'lucide-react';
+import { ExternalLink, Link2 as LinkIcon, Loader2, Tag, LogIn } from 'lucide-react'; // Added LogIn
 import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from '@/contexts/auth-context';
