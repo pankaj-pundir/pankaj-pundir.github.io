@@ -10,20 +10,18 @@ export const userInfo = {
     github: 'https://github.com/pankaj-pundir',
     linkedin: 'https://www.linkedin.com/in/pankaj-pundir',
     twitter: 'https://www.twitter.com/twt_curious_guy',
-    medium: 'https://medium.com/@pankajpundir',
     email: 'pankaj.pundir369@gmail.com',
-    facebook: 'https://www.facebook.com/pankaj.pundir.92',
-    skype: 'skype:pankaj.pundir369?chat',
   },
-  profileImage: "/images/profilepic.jpg", 
+  profileImage: "/assets/images/profilepic.jpg", 
 };
 
+//  images are saved in the path /public/assets/images/*
 export const projects: Project[] = [
   {
     id: '1',
     title: 'ColorTuner',
     description: 'This software is made to visualize and extract the colors from the images with exact HSV coding. Thus very useful for color extraction, and color detection tuning.',
-    imageUrl: '/images/portfolio/colorTuner.gif',
+    imageUrl: '/assets/images//colorTuner.gif',
     videoUrl: '',
     tags: ['Kivy', 'Python', 'Image Processing', 'App design', 'Color Extractor'],
     liveLink: '#',
@@ -33,7 +31,7 @@ export const projects: Project[] = [
     id: '2',
     title: 'Graph Reader (FigSense)',
     description: 'A fully automated GUI to read graphical data like bar and line chart and extract the information for the user. Line and bar charts can be extracted from images as well as pdf and classifying the images in categories. Finally extracting points, line, and textual data. Merging all the information and provide meaningful data to the user.',
-    imageUrl: '/images/portfolio/graphReader.jpg',
+    imageUrl: '/assets/images/graphReader.jpg',
     tags: ['Kivy', 'OpenCV', 'Computer Vision', 'Python'],
     liveLink: '#',
     sourceLink: '#',
@@ -42,7 +40,7 @@ export const projects: Project[] = [
     id: '3',
     title: 'Dexterous',
     description: 'Software to replace GPS. It track position of object with accelerometer and gyroscope, thus mapping 3D object poesition.',
-    imageUrl: '/images/portfolio/dexterous.jpg',
+    imageUrl: '/assets/images/dexterous.jpg',
     tags: ['matplotlib', 'sensors', 'Python', '3D Tracking'],
     liveLink: '#',
     sourceLink: '#',
@@ -51,7 +49,7 @@ export const projects: Project[] = [
     id: '4',
     title: 'Instant Attendance',
     description: 'To decrease the attendance time in college. OTP method is implemented with sharing a secret code with the students to mark the attendance parallelly. This process decreases the time as compared to serial attendance.',
-    imageUrl: '/images/portfolio/attendance.gif',
+    imageUrl: '/assets/images/attendance.gif',
     tags: ['PHP', 'CSS', 'JavaScript', 'Web Development'],
     liveLink: '#',
     sourceLink: '#',
@@ -72,25 +70,25 @@ export const workHistory: WorkItem[] = [
   {
     id: '6', // New ID
     company: 'Google',
-    companyLogoUrl: 'https://placehold.co/100x40.png?text=Google',
-    role: 'Software Engineer', // Assuming a generic role, please update if needed
+    companyLogoUrl: 'https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_200_200/company-logo_200_200/0/1631311446380?e=1752710400&v=beta&t=_zAJJHkDhi7EvfyEGIEBojzv4ci4mmIAm6I_5Xqnua8',
+    role: 'Software Engineer 3', // Assuming a generic role, please update if needed
     duration: 'June 2024 - Present',
     description: [
-      'Currently working as a Software Engineer at Google.', // Placeholder description
+      'Working on private cloud technologies and ensuring Backup and Restore works efficiently', // Placeholder description
     ],
-    technologies: ['Software Engineering'], // Placeholder, please update
+    technologies: ['Software Engineering','Kubernetes','Go'], // Placeholder, please update
     status: 'current',
   },
   {
     id: '7', // New ID
     company: 'PhonePe',
-    companyLogoUrl: 'https://placehold.co/100x40.png?text=PhonePe',
-    role: 'Software Engineer', // Assuming a generic role, please update if needed
+    companyLogoUrl: 'https://media.licdn.com/dms/image/v2/D560BAQHLOrShxWW33g/company-logo_200_200/company-logo_200_200/0/1732870614932/phonepe_internet_logo?e=1752710400&v=beta&t=z4qwuh1wuNPC1V7aVbhwzcLwXJ2rir_w55jsArglG9Y',
+    role: 'Software Engineer 2', // Assuming a generic role, please update if needed
     duration: 'April 2024 - May 2024',
     description: [
-      'Short-term role at PhonePe.', // Placeholder description
+      'Worked on NCMC project and experienced the sheer data volume', // Placeholder description
     ],
-    technologies: ['Software Engineering'], // Placeholder, please update
+    technologies: ['Software Engineering','Java'], // Placeholder, please update
     status: 'past',
   },
   {

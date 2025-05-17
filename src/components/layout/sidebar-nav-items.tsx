@@ -9,9 +9,9 @@ import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/', label: 'Projects', icon: LayoutGrid }, // Changed icon from Briefcase to LayoutGrid
-  { href: '/about', label: 'About Me', icon: User },
   { href: '/work', label: 'Work', icon: Laptop },
-  { href: '/blog', label: 'Blog', icon: Newspaper },
+  // { href: '/blog', label: 'Blog', icon: Newspaper },
+  { href: '/about', label: 'About Me', icon: User },
   { href: '/links', label: 'Links', icon: Link2 },
 ];
 
