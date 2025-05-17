@@ -3,13 +3,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Briefcase, Laptop, Newspaper, Link2, User, Home as HomeIcon } from 'lucide-react'; // Added User, renamed Home to HomeIcon
+import { LayoutGrid, Laptop, Newspaper, Link2, User } from 'lucide-react'; // Changed Briefcase to LayoutGrid, removed HomeIcon
 import { SidebarMenu, SidebarMenuItem, SidebarMenuButton } from '@/components/ui/sidebar';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { href: '/', label: 'Projects', icon: Briefcase }, // '/' is now project-focused
-  { href: '/about', label: 'About Me', icon: User }, // New 'About Me' page
+  { href: '/', label: 'Projects', icon: LayoutGrid }, // Changed icon from Briefcase to LayoutGrid
+  { href: '/about', label: 'About Me', icon: User },
   { href: '/work', label: 'Work', icon: Laptop },
   { href: '/blog', label: 'Blog', icon: Newspaper },
   { href: '/links', label: 'Links', icon: Link2 },
