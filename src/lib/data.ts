@@ -10,8 +10,9 @@ export const userInfo = {
     linkedin: 'https://www.linkedin.com/in/pankajpundir/',
     twitter: 'https://twitter.com/PankajPundirEX',
     medium: 'https://medium.com/@pankajpundir',
+    email: 'pankajpundir@example.com', // Add your actual email here
   },
-  profileImage: "https://placehold.co/300x300.png",
+  profileImage: "https://placehold.co/300x300.png", // You can replace this with your actual image URL
 };
 
 export const projects: Project[] = [
@@ -20,7 +21,7 @@ export const projects: Project[] = [
     title: 'E-commerce Platform',
     description: 'A full-featured e-commerce platform with a custom CMS, payment gateway integration, and advanced analytics.',
     imageUrl: 'https://placehold.co/600x400.png',
-    videoUrl: '', // Add YouTube/Vimeo embed URL if available
+    videoUrl: '', 
     tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'AWS'],
     liveLink: '#',
     sourceLink: '#',
@@ -37,7 +38,7 @@ export const projects: Project[] = [
     id: '3',
     title: 'AI-Powered Data Visualization Dashboard',
     description: 'A dashboard that uses machine learning to analyze and visualize complex datasets, providing actionable insights.',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Example video
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
     tags: ['Python', 'Flask', 'D3.js', 'TensorFlow', 'GCP'],
     sourceLink: '#',
   },

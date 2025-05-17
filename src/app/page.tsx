@@ -2,22 +2,21 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { userInfo, projects, workHistory, blogPosts } from '@/lib/data';
-import { ArrowRight, Download, Github, Linkedin, Mail, Twitter, Rss, Palette } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 import Link from 'next/link';
-import ThemeGeneratorForm from '@/components/forms/theme-generator-form';
 
 export default function Home() {
   return (
     <div className="space-y-12">
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-12 bg-card rounded-xl shadow-lg">
+      <section className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-12 bg-card rounded-xl shadow-xl glass-backdrop">
         <div className="relative h-48 w-48 md:h-64 md:w-64 rounded-full overflow-hidden shadow-md shrink-0">
           <Image
             src={userInfo.profileImage}
             alt={userInfo.name}
             layout="fill"
             objectFit="cover"
-            data-ai-hint="professional portrait"
+            data-ai-hint="professional portrait person"
           />
         </div>
         <div className="text-center md:text-left">
@@ -43,30 +42,12 @@ export default function Home() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="mailto:example@example.com"> {/* Replace with actual email */}
+              <a href={`mailto:${userInfo.socials.email || 'example@example.com'}`}> {/* Updated to use email from data.ts if available */}
                 Contact Me <Mail className="ml-2 h-5 w-5" />
               </a>
             </Button>
           </div>
         </div>
-      </section>
-
-      {/* AI Theme Generator Section */}
-      <section id="theme-generator">
-        <Card className="shadow-lg">
-          <CardHeader>
-            <div className="flex items-center gap-2">
-              <Palette className="h-6 w-6 text-primary" />
-              <CardTitle className="text-2xl">AI Theme Generator</CardTitle>
-            </div>
-            <CardDescription>
-              Personalize your site&apos;s theme! Describe your desired aesthetic or provide example portfolios, and let AI craft a unique theme for you.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ThemeGeneratorForm />
-          </CardContent>
-        </Card>
       </section>
 
       {/* Quick Overview Sections (Optional - Can be expanded or removed) */}
