@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -10,7 +11,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
-import { Sheet, SheetContent } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet" // Added SheetHeader and SheetTitle
 import { Skeleton } from "@/components/ui/skeleton"
 import {
   Tooltip,
@@ -181,7 +182,7 @@ const Sidebar = React.forwardRef<
       return (
         <div
           className={cn(
-            "flex h-full w-[--sidebar-width] flex-col bg-sidebar text-sidebar-foreground shadow-xl", // Removed glass-backdrop
+            "flex h-full w-[--sidebar-width] flex-col bg-sidebar text-sidebar-foreground shadow-xl",
             className
           )}
           ref={ref}
@@ -198,7 +199,7 @@ const Sidebar = React.forwardRef<
           <SheetContent
             data-sidebar="sidebar"
             data-mobile="true"
-            className="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground shadow-xl [&>button]:hidden" // Removed glass-backdrop
+            className="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground shadow-xl [&>button]:hidden"
             style={
               {
                 "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
@@ -206,6 +207,10 @@ const Sidebar = React.forwardRef<
             }
             side={side}
           >
+            {/* Added SheetHeader and SheetTitle for accessibility */}
+            <SheetHeader className="sr-only">
+              <SheetTitle>Main Navigation Menu</SheetTitle>
+            </SheetHeader>
             <div className="flex h-full w-full flex-col">{children}</div>
           </SheetContent>
         </Sheet>
@@ -249,7 +254,7 @@ const Sidebar = React.forwardRef<
           <div
             data-sidebar="sidebar" // This div gets bg-sidebar
             className={cn(
-              "flex h-full w-full flex-col bg-sidebar shadow-xl", // Removed glass-backdrop
+              "flex h-full w-full flex-col bg-sidebar shadow-xl",
               "group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border"
             )}
           >
@@ -764,3 +769,5 @@ export {
   SidebarTrigger,
   useSidebar,
 }
+
+    
