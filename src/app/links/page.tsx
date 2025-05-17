@@ -9,9 +9,9 @@ import { Label } from "@/components/ui/label";
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { categorizeWebsite } from '@/ai/flows/website-categorizer';
+// import { categorizeWebsite } from '@/ai/flows/website-categorizer'; // Commented out for static export
 import type { LinkItem, LinkCategory } from '@/lib/types';
-import { ExternalLink, Link2 as LinkIcon, Loader2, Tag, LogIn } from 'lucide-react'; // Added LogIn
+import { ExternalLink, Link2 as LinkIcon, Loader2, Tag, LogIn } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from '@/contexts/auth-context';
@@ -53,7 +53,9 @@ export default function LinksPage() {
   const onSubmit: SubmitHandler<AddLinkFormData> = async (data) => {
     setIsLoading(true);
     try {
-      const { category } = await categorizeWebsite({ url: data.url });
+      // const { category } = await categorizeWebsite({ url: data.url }); // Commented out for static export
+      const category: LinkCategory = 'other'; // Default category for static export
+      
       const newLink: LinkItem = {
         id: Date.now().toString(), // simple unique id
         ...data,
@@ -63,13 +65,13 @@ export default function LinksPage() {
       form.reset();
       toast({
         title: "Link Added!",
-        description: `"${data.title}" added to ${categoryDisplayNames[category]}.`,
+        description: `"${data.title}" added to ${categoryDisplayNames[category]}. (AI categorization disabled for static site)`,
       });
     } catch (error) {
       console.error('Error adding link:', error);
        toast({
         title: "Error Adding Link",
-        description: "Could not categorize or add the link. Please try again.",
+        description: "Could not add the link. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -103,7 +105,7 @@ export default function LinksPage() {
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle>Add a New Link</CardTitle>
-            <CardDescription>Submit a URL, and our AI will help categorize it.</CardDescription>
+            <CardDescription>Submit a URL. It will be added to &quot;Other Resources&quot;. (AI categorization disabled for static site)</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
