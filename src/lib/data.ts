@@ -5,15 +5,15 @@ export const userInfo = {
   name: 'Pankaj Pundir',
   title: 'B.Tech CSE Graduate | AI & Computer Vision Developer',
   bio: "Hey, I'm Pankaj Pundir. I completed my B.Tech in Computer Science and Engineering. I'm skilled in Computer Vision, Deep Learning, coding, and logical thinking. Creating Desktop applications (Kivy) and web designing are hobbies of mine. The drive to create General AI is a core professional ambition. My technical skills include Python, C++, Computer Vision, Machine Learning, Deep Learning, and Kivy. I also enjoy watching movies, traveling, competitive coding, and have interests in meditation, hypnotism, and card tricks, which help me find patterns and understand people.",
-  skills: ['Python', 'C++', 'OpenCV', 'Git', 'PyTorch', 'PySpark', 'Angular', 'Data Science', 'Computer Vision', 'Deep Learning', 'Kivy', 'Machine Learning'],
+  skills: ['Python', 'C++', 'OpenCV', 'Git', 'PyTorch', 'PySpark', 'Angular', 'Data Science', 'Computer Vision', 'Deep Learning', 'Kivy', 'Machine Learning', 'Dash', 'Plotly', 'Airflow', 'Big Data Technologies'],
   socials: {
-    github: 'https://github.com/pankaj-pundir', // From previous data, ensure it's correct
+    github: 'https://github.com/pankaj-pundir',
     linkedin: 'https://www.linkedin.com/in/pankaj-pundir',
-    twitter: 'https://www.twitter.com/twt_curious_guy', // Using the one from header nav
-    medium: 'https://medium.com/@pankajpundir', // From previous data, ensure it's correct or remove if not wanted
+    twitter: 'https://www.twitter.com/twt_curious_guy',
+    medium: 'https://medium.com/@pankajpundir',
     email: 'pankaj.pundir369@gmail.com',
     facebook: 'https://www.facebook.com/pankaj.pundir.92',
-    skype: 'https://www.skype.com/pankaj.pundir369', // This is a profile link
+    skype: 'https://www.skype.com/pankaj.pundir369',
   },
   profileImage: "/images/profilepic.jpg", 
 };
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description: 'This software is made to visualize and extract the colors from the images with exact HSV coding. Thus very useful for color extraction, and color detection tuning.',
     imageUrl: '/images/portfolio/colorTuner.gif',
     videoUrl: '',
-    tags: ['Image Processing', 'App design', 'Color Extractor', 'Kivy', 'Python'],
+    tags: ['Kivy', 'Python', 'Image Processing', 'App design', 'Color Extractor'],
     liveLink: '#', 
     sourceLink: 'https://github.com/pankaj-pundir/ColorTuner',
   },
@@ -60,14 +60,77 @@ export const projects: Project[] = [
     id: '5',
     title: 'Project Video Demo',
     description: 'YouTube video showcasing a project.',
-    imageUrl: 'https://placehold.co/600x400.png', // Placeholder image as it's a video
+    imageUrl: 'https://placehold.co/600x400.png',
     videoUrl: 'https://www.youtube.com/embed/JgTtuUGkSzw',
-    tags: ['Video Demo'],
-    liveLink: 'https://www.youtube.com/watch?v=JgTtuUGkSzw', // Link to the actual video page
+    tags: ['Video Demo', 'YouTube'],
+    liveLink: 'https://www.youtube.com/watch?v=JgTtuUGkSzw',
     sourceLink: '#',
   }
 ];
 
-export const workHistory: WorkItem[] = [];
+export const workHistory: WorkItem[] = [
+  {
+    id: '1',
+    company: 'GROWW',
+    role: 'Software Engineer 2 (Credit Team)',
+    duration: 'Feb 2022 - March 2024 | Banglore, India',
+    description: [
+      'Designed and developed real-time loans flow for groww users.',
+      'Integrated major banks [IDFC] and NBFCs [ABFL,GCS].',
+      'Designed User journey and contributed on Business rule engine to determine user Credit worthiness and generate Real Time offers.',
+    ],
+    technologies: ['Backend Development', 'API Integration', 'Business Rule Engine'], // Inferred technologies
+    status: 'past',
+  },
+  {
+    id: '2',
+    company: 'BANK OF NEW YORK MELLON',
+    role: 'Software Engineer',
+    duration: 'July 2020 - Feb 2022 | Pune, India',
+    description: [
+      'Developed understanding on Bank functionalities.',
+      'Used Pyspark, Jupyter and Pandas to analyse data and create pipeline for Regulatory Reporting.',
+      'Built intuitive dashboard using Python, Dash and Plotly, for visualising and extracting insights form data.',
+    ],
+    technologies: ['Pyspark', 'Jupyter', 'Pandas', 'Python', 'Dash', 'Plotly', 'Data Analysis', 'Regulatory Reporting'],
+    status: 'past',
+  },
+  {
+    id: '3',
+    company: 'BANK OF NEW YORK MELLON',
+    role: 'Software Engineer Intern',
+    duration: 'Jan - June 2020 | Pune, India',
+    description: [
+      'Applying Software engineering best practices.',
+      'Responsible for developing Workflows with PySpark and using Airflow scheduler. Working on Big Data Technologies.',
+    ],
+    technologies: ['PySpark', 'Airflow', 'Big Data Technologies', 'Workflow Development'],
+    status: 'past',
+  },
+  {
+    id: '4',
+    company: 'IIT ROPAR',
+    role: 'Research Intern',
+    duration: 'May 2019 – Jul 2019 | Punjab, India',
+    description: [
+      'Chart Image classification using Deep learning and ML Techniques.',
+      'Designed Region-based text categorization technique for Chart images.',
+    ],
+    technologies: ['Deep Learning', 'Machine Learning', 'Image Classification', 'Text Categorization'],
+    status: 'past',
+  },
+  {
+    id: '5',
+    company: 'IIT ROPAR',
+    role: 'Research Intern',
+    duration: 'May 2018 – Jul 2018 | Punjab, India',
+    description: [
+      'Done Research and derived a method for Data Extraction and classification of line and bar charts.',
+      'Design and deliver technology to assist people with disabilities.',
+    ],
+    technologies: ['Data Extraction', 'Data Classification', 'Research', 'Assistive Technology'],
+    status: 'past',
+  },
+];
 
 export const blogPosts: BlogPost[] = [];
