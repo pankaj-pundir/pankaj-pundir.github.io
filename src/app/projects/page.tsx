@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -7,6 +8,12 @@ import { projects } from "@/lib/data";
 import type { Project } from "@/lib/types";
 
 function ProjectCard({ project }: { project: Project }) {
+  let imageHint = "project abstract"; // Default hint
+  if (project.tags.includes('Image Processing') || project.tags.includes('Kivy')) imageHint = "software color palette";
+  if (project.tags.includes('Graph') || project.tags.includes('Data Extraction')) imageHint = "data graph chart";
+  if (project.tags.includes('3D Tracking') || project.tags.includes('Sensors')) imageHint = "3d tracking sensor";
+  if (project.tags.includes('Security') || project.title.toLowerCase().includes('attendance')) imageHint = "security code mobile";
+  
   return (
     <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
       {project.imageUrl && !project.videoUrl && (
@@ -16,7 +23,7 @@ function ProjectCard({ project }: { project: Project }) {
             alt={project.title}
             layout="fill"
             objectFit="cover"
-            data-ai-hint="project technology"
+            data-ai-hint={imageHint}
           />
         </div>
       )}
@@ -55,14 +62,14 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </CardContent>
       <CardFooter className="flex gap-2 justify-end">
-        {project.sourceLink && (
+        {project.sourceLink && project.sourceLink !== '#' && (
           <Button variant="outline" size="sm" asChild>
             <Link href={project.sourceLink} target="_blank">
               <Github className="mr-2 h-4 w-4" /> Source
             </Link>
           </Button>
         )}
-        {project.liveLink && (
+        {project.liveLink && project.liveLink !== '#' && (
           <Button size="sm" asChild>
             <Link href={project.liveLink} target="_blank">
               <ExternalLink className="mr-2 h-4 w-4" /> Live Demo

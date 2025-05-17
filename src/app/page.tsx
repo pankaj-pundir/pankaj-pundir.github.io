@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,7 +17,7 @@ export default function Home() {
             alt={userInfo.name}
             layout="fill"
             objectFit="cover"
-            data-ai-hint="professional portrait person"
+            data-ai-hint="person student"
           />
         </div>
         <div className="text-center md:text-left">
@@ -74,7 +75,7 @@ export default function Home() {
             <CardTitle>Current Work</CardTitle>
           </CardHeader>
           <CardContent>
-             <p className="text-sm text-muted-foreground">{workHistory.find(w => w.status === 'current')?.company || 'Exploring new opportunities.'}</p>
+             <p className="text-sm text-muted-foreground">{workHistory.find(w => w.status === 'current')?.company || 'Focusing on personal projects and learning.'}</p>
              <Button variant="link" asChild className="mt-2 px-0">
               <Link href="/work">More About My Work <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
@@ -91,10 +92,13 @@ export default function Home() {
                   <Link href="/blog">{b.title}</Link>
                 </li>
               ))}
+               {blogPosts.length === 0 && <p className="text-sm text-muted-foreground">No blog posts yet.</p>}
             </ul>
+            {blogPosts.length > 0 && (
              <Button variant="link" asChild className="mt-2 px-0">
-              <Link href="/blog">Read All Posts <ArrowRight className="ml-1 h-4 w-4" /></Link>
-            </Button>
+                <Link href="/blog">Read All Posts <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+            )}
           </CardContent>
         </Card>
       </section>
