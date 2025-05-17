@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Image from "next/image"; // Still needed for tag logos
 import Link from "next/link";
 import { ExternalLink, Github, Video } from "lucide-react";
 import { projects } from "@/lib/data";
@@ -19,11 +19,10 @@ function ProjectCard({ project }: { project: Project }) {
     <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
       {project.imageUrl && !project.videoUrl && (
         <div className="relative w-full h-48 md:h-56">
-          <Image
+          <img
             src={project.imageUrl}
             alt={project.title}
-            layout="fill"
-            objectFit="cover"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             data-ai-hint={imageHint}
           />
         </div>
@@ -43,11 +42,10 @@ function ProjectCard({ project }: { project: Project }) {
           ) : (
             <>
               {project.imageUrl && ( 
-                <Image
+                <img
                   src={project.imageUrl}
                   alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
                   data-ai-hint={imageHint}
                 />
               )}
