@@ -13,6 +13,7 @@ import type { LinkItem, LinkCategory } from '@/lib/types';
 import { ExternalLink, Link2 as LinkIcon, Loader2, Tag } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useAuth } from '@/contexts/auth-context';
 import Link from 'next/link';
 
 const addLinkFormSchema = z.object({
@@ -41,6 +42,7 @@ export default function LinksPage() {
   const [links, setLinks] = useState<LinkItem[]>(initialLinks);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const { user, loading: authLoading, signInWithGoogle } = useAuth();
 
   const form = useForm<AddLinkFormData>({
     resolver: zodResolver(addLinkFormSchema),
@@ -85,35 +87,62 @@ export default function LinksPage() {
         </p>
       </header>
 
-      <Card className="shadow-lg">
-        <CardHeader>
-          <CardTitle>Add a New Link</CardTitle>
-          <CardDescription>Submit a URL, and our AI will help categorize it.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <div>
-              <Label htmlFor="url">URL</Label>
-              <Input id="url" {...form.register('url')} placeholder="https://example.com" />
-              {form.formState.errors.url && <p className="text-sm text-destructive mt-1">{form.formState.errors.url.message}</p>}
-            </div>
-            <div>
-              <Label htmlFor="title">Title</Label>
-              <Input id="title" {...form.register('title')} placeholder="Example Website" />
-              {form.formState.errors.title && <p className="text-sm text-destructive mt-1">{form.formState.errors.title.message}</p>}
-            </div>
-             <div>
-              <Label htmlFor="description">Description (Optional)</Label>
-              <Input id="description" {...form.register('description')} placeholder="A brief description of the website." />
-              {form.formState.errors.description && <p className="text-sm text-destructive mt-1">{form.formState.errors.description.message}</p>}
-            </div>
-            <Button type="submit" disabled={isLoading} className="w-full md:w-auto">
-              {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <LinkIcon className="mr-2 h-4 w-4" />}
-              Add Link
+      {authLoading && (
+        <Card className="shadow-lg">
+          <CardHeader>
+            <CardTitle>Add a New Link</CardTitle>
+          </CardHeader>
+          <CardContent className="flex justify-center items-center h-24">
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          </CardContent>
+        </Card>
+      )}
+
+      {!authLoading && user && (
+        <Card className="shadow-lg">
+          <CardHeader>
+            <CardTitle>Add a New Link</CardTitle>
+            <CardDescription>Submit a URL, and our AI will help categorize it.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <div>
+                <Label htmlFor="url">URL</Label>
+                <Input id="url" {...form.register('url')} placeholder="https://example.com" />
+                {form.formState.errors.url && <p className="text-sm text-destructive mt-1">{form.formState.errors.url.message}</p>}
+              </div>
+              <div>
+                <Label htmlFor="title">Title</Label>
+                <Input id="title" {...form.register('title')} placeholder="Example Website" />
+                {form.formState.errors.title && <p className="text-sm text-destructive mt-1">{form.formState.errors.title.message}</p>}
+              </div>
+              <div>
+                <Label htmlFor="description">Description (Optional)</Label>
+                <Input id="description" {...form.register('description')} placeholder="A brief description of the website." />
+                {form.formState.errors.description && <p className="text-sm text-destructive mt-1">{form.formState.errors.description.message}</p>}
+              </div>
+              <Button type="submit" disabled={isLoading} className="w-full md:w-auto">
+                {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <LinkIcon className="mr-2 h-4 w-4" />}
+                Add Link
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      )}
+      
+      {!authLoading && !user && (
+         <Card className="shadow-lg">
+          <CardHeader>
+            <CardTitle>Add a New Link</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center">
+            <p className="mb-4 text-muted-foreground">Please log in to add new links.</p>
+            <Button onClick={signInWithGoogle}>
+              <LogIn className="mr-2 h-4 w-4" /> Login with Google
             </Button>
-          </form>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      )}
       
       <Tabs defaultValue={allCategories[0]} className="w-full">
         <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">

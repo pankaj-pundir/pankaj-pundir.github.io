@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Github, Linkedin, Twitter, Rss } from 'lucide-react';
+import { AuthProvider, AuthButton } from '@/contexts/auth-context';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,50 +33,53 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <SidebarProvider defaultOpen>
-          <Sidebar variant="sidebar" collapsible="icon" className="shadow-lg">
-            <SidebarHeader className="p-4 items-center">
-              <AppLogo />
-              <div className="flex-grow" />
-              <SidebarTrigger className="md:hidden" />
-            </SidebarHeader>
-            <SidebarContent>
-              <SidebarNavItems />
-            </SidebarContent>
-            <SidebarFooter className="p-4 mt-auto">
-              <div className="flex space-x-2 justify-center group-data-[collapsible=icon]:hidden">
-                <Button variant="ghost" size="icon" asChild>
-                  <Link href="https://github.com/pankaj-pundir" target="_blank" aria-label="GitHub">
-                    <Github className="h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <Link href="https://www.linkedin.com/in/pankajpundir/" target="_blank" aria-label="LinkedIn">
-                    <Linkedin className="h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button variant="ghost" size="icon" asChild>
-                  <Link href="https://twitter.com/PankajPundirEX" target="_blank" aria-label="Twitter">
-                    <Twitter className="h-5 w-5" />
-                  </Link>
-                </Button>
-                 <Button variant="ghost" size="icon" asChild>
-                  <Link href="https://medium.com/@pankajpundir" target="_blank" aria-label="Medium Blog">
-                    <Rss className="h-5 w-5" /> {/* Using Rss as a generic blog icon */}
-                  </Link>
-                </Button>
-              </div>
-               <p className="text-xs text-muted-foreground text-center mt-2 group-data-[collapsible=icon]:hidden">
-                © {new Date().getFullYear()} Pankaj Pundir
-              </p>
-            </SidebarFooter>
-          </Sidebar>
-          <SidebarInset>
-            <main className="min-h-screen p-4 md:p-8">
-              {children}
-            </main>
-          </SidebarInset>
-        </SidebarProvider>
+        <AuthProvider>
+          <SidebarProvider defaultOpen={false}> {/* Sidebar hidden by default */}
+            <Sidebar variant="sidebar" collapsible="icon" className="shadow-lg">
+              <SidebarHeader className="p-4 items-center">
+                <AppLogo />
+                <div className="flex-grow" />
+                <SidebarTrigger className="md:hidden" />
+              </SidebarHeader>
+              <SidebarContent>
+                <SidebarNavItems />
+              </SidebarContent>
+              <SidebarFooter className="p-4 mt-auto space-y-2">
+                <AuthButton /> {/* Login/Logout Button */}
+                <div className="flex space-x-2 justify-center group-data-[collapsible=icon]:hidden">
+                  <Button variant="ghost" size="icon" asChild>
+                    <Link href="https://github.com/pankaj-pundir" target="_blank" aria-label="GitHub">
+                      <Github className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button variant="ghost" size="icon" asChild>
+                    <Link href="https://www.linkedin.com/in/pankajpundir/" target="_blank" aria-label="LinkedIn">
+                      <Linkedin className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button variant="ghost" size="icon" asChild>
+                    <Link href="https://twitter.com/PankajPundirEX" target="_blank" aria-label="Twitter">
+                      <Twitter className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button variant="ghost" size="icon" asChild>
+                    <Link href="https://medium.com/@pankajpundir" target="_blank" aria-label="Medium Blog">
+                      <Rss className="h-5 w-5" /> {/* Using Rss as a generic blog icon */}
+                    </Link>
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground text-center mt-2 group-data-[collapsible=icon]:hidden">
+                  © {new Date().getFullYear()} Pankaj Pundir
+                </p>
+              </SidebarFooter>
+            </Sidebar>
+            <SidebarInset>
+              <main className="min-h-screen p-4 md:p-8">
+                {children}
+              </main>
+            </SidebarInset>
+          </SidebarProvider>
+        </AuthProvider>
         <Toaster />
       </body>
     </html>
