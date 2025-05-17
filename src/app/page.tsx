@@ -1,16 +1,15 @@
 
-'use client'; // Added for potential future search state management
+'use client'; 
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Video, Search as SearchIcon, Palette } from "lucide-react"; // Added Palette, removed unused icons
-import { projects, userInfo } from "@/lib/data"; // Added userInfo
+import { ExternalLink, Github, Video, Search as SearchIcon } from "lucide-react";
+import { projects, userInfo } from "@/lib/data";
 import type { Project } from "@/lib/types";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from 'react';
-// Removed ThemeGeneratorForm import as it was deleted earlier
 
 export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -42,7 +41,7 @@ export default function HomePage() {
               type="search"
               placeholder="Search projects..."
               className="w-full pl-10 pr-4 py-3 rounded-lg shadow-md bg-card/80 border-border"
-              value={searchTerm} // Ensure Input is controlled
+              value={searchTerm} 
               disabled
             />
           </div>
@@ -82,8 +81,6 @@ export default function HomePage() {
           {searchTerm ? `No projects found for "${searchTerm}".` : "No projects to display yet. Check back soon!"}
         </p>
       )}
-
-      {/* Removed ThemeGeneratorForm section as the component was deleted */}
     </div>
   );
 }
@@ -143,9 +140,18 @@ function ProjectCard({ project }: { project: Project }) {
         <CardDescription className="text-sm h-20 overflow-y-auto">{project.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 items-center">
           {project.tags.map((tag) => (
-            <span key={tag} className="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded-md">
+            <span key={tag} className="flex items-center px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded-md">
+              <Image
+                src={`https://placehold.co/16x16.png`} // Placeholder for tag logo
+                alt={`${tag} logo`}
+                width={12}
+                height={12}
+                className="mr-1 rounded-sm"
+                data-logo-for={tag.toLowerCase().replace(/ /g, '-')}
+                data-ai-hint={`${tag.toLowerCase()} icon`}
+              />
               {tag}
             </span>
           ))}

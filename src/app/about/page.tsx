@@ -30,9 +30,18 @@ export default function AboutPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-primary">{userInfo.name}</h1>
           <p className="mt-2 text-lg md:text-xl text-muted-foreground">{userInfo.title}</p>
           <p className="mt-4 text-md md:text-lg max-w-2xl">{userInfo.bio}</p>
-          <div className="mt-6 flex flex-wrap gap-2 justify-center md:justify-start">
+          <div className="mt-6 flex flex-wrap gap-3 items-center justify-center md:justify-start">
             {userInfo.skills.slice(0, 7).map((skill) => (
-              <span key={skill} className="px-3 py-1 text-sm bg-secondary text-secondary-foreground rounded-full shadow-sm">
+              <span key={skill} className="flex items-center px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-full shadow-sm">
+                <Image
+                  src={`https://placehold.co/20x20.png`} // Placeholder for skill logo
+                  alt={`${skill} logo`}
+                  width={16}
+                  height={16}
+                  className="mr-1.5 rounded-sm"
+                  data-logo-for={skill.toLowerCase().replace(/ /g, '-')}
+                  data-ai-hint={`${skill.toLowerCase()} icon`}
+                />
                 {skill}
               </span>
             ))}

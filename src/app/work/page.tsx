@@ -4,17 +4,31 @@ import { Badge } from "@/components/ui/badge";
 import { workHistory } from "@/lib/data";
 import type { WorkItem } from "@/lib/types";
 import { Briefcase, CalendarDays } from "lucide-react";
+import Image from "next/image";
 
 function WorkItemCard({ item }: { item: WorkItem }) {
   return (
     <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
       <CardHeader>
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-start gap-4">
           <div>
             <CardTitle className="text-xl text-primary">{item.role}</CardTitle>
             <CardDescription className="text-md font-semibold">{item.company}</CardDescription>
           </div>
-          {item.status === 'current' && <Badge variant="default">Current</Badge>}
+          <div className="flex flex-col items-end gap-2">
+            {item.companyLogoUrl && (
+              <div className="relative h-10 w-24"> {/* Adjust size as needed */}
+                <Image
+                  src={item.companyLogoUrl}
+                  alt={`${item.company} logo`}
+                  layout="fill"
+                  objectFit="contain"
+                  data-ai-hint={`${item.company.toLowerCase()} logo`}
+                />
+              </div>
+            )}
+            {item.status === 'current' && <Badge variant="default">Current</Badge>}
+          </div>
         </div>
         <div className="flex items-center text-xs text-muted-foreground mt-1">
           <CalendarDays className="h-3 w-3 mr-1.5" />
@@ -32,6 +46,8 @@ function WorkItemCard({ item }: { item: WorkItem }) {
         <div className="flex flex-wrap gap-2">
           {item.technologies.map((tech) => (
             <Badge key={tech} variant="secondary" className="text-xs">
+              {/* Placeholder for tech logo - can be enhanced later */}
+              {/* <Image src={`https://placehold.co/16x16.png?text=${tech.substring(0,1)}`} alt={tech} width={12} height={12} className="mr-1 inline-block" data-logo-for={tech.toLowerCase()}/> */}
               {tech}
             </Badge>
           ))}

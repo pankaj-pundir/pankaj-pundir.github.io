@@ -1,3 +1,4 @@
+
 export interface Project {
   id: string;
   title: string;
@@ -12,6 +13,7 @@ export interface Project {
 export interface WorkItem {
   id: string;
   company: string;
+  companyLogoUrl?: string; // Added for company logo
   role: string;
   duration: string;
   description: string[];

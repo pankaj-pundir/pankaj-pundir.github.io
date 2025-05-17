@@ -8,7 +8,7 @@ import { projects } from "@/lib/data";
 import type { Project } from "@/lib/types";
 
 function ProjectCard({ project }: { project: Project }) {
-  let imageHint = "project abstract"; // Default hint
+  let imageHint = "project abstract"; 
   if (project.imageUrl?.includes('colorTuner')) imageHint = "software color palette";
   else if (project.imageUrl?.includes('graphReader')) imageHint = "data graph chart";
   else if (project.imageUrl?.includes('dexterous')) imageHint = "3d tracking sensor";
@@ -42,7 +42,7 @@ function ProjectCard({ project }: { project: Project }) {
             ></iframe>
           ) : (
             <>
-              {project.imageUrl && ( // Show placeholder image if video is not YouTube and image exists
+              {project.imageUrl && ( 
                 <Image
                   src={project.imageUrl}
                   alt={project.title}
@@ -62,9 +62,18 @@ function ProjectCard({ project }: { project: Project }) {
         <CardDescription className="text-sm h-20 overflow-y-auto">{project.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 items-center">
           {project.tags.map((tag) => (
-            <span key={tag} className="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded-md">
+            <span key={tag} className="flex items-center px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded-md">
+              <Image
+                src={`https://placehold.co/16x16.png`} // Placeholder for tag logo
+                alt={`${tag} logo`}
+                width={12}
+                height={12}
+                className="mr-1 rounded-sm"
+                data-logo-for={tag.toLowerCase().replace(/ /g, '-')}
+                data-ai-hint={`${tag.toLowerCase()} icon`}
+              />
               {tag}
             </span>
           ))}
