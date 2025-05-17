@@ -1,18 +1,18 @@
+
 'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Briefcase, Laptop, Newspaper, Link2, Palette, Code } from 'lucide-react';
+import { Briefcase, Laptop, Newspaper, Link2, User, Home as HomeIcon } from 'lucide-react'; // Added User, renamed Home to HomeIcon
 import { SidebarMenu, SidebarMenuItem, SidebarMenuButton } from '@/components/ui/sidebar';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { href: '/', label: 'Home', icon: Home },
-  { href: '/projects', label: 'Projects', icon: Briefcase },
+  { href: '/', label: 'Projects', icon: Briefcase }, // '/' is now project-focused
+  { href: '/about', label: 'About Me', icon: User }, // New 'About Me' page
   { href: '/work', label: 'Work', icon: Laptop },
   { href: '/blog', label: 'Blog', icon: Newspaper },
   { href: '/links', label: 'Links', icon: Link2 },
-  // { href: '/theme-generator', label: 'Theme AI', icon: Palette }, // Theme generator will be part of home page
 ];
 
 export default function SidebarNavItems() {
