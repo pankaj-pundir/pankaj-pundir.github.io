@@ -9,10 +9,11 @@ import type { Project } from "@/lib/types";
 
 function ProjectCard({ project }: { project: Project }) {
   let imageHint = "project abstract"; // Default hint
-  if (project.tags.includes('Image Processing') || project.tags.includes('Kivy')) imageHint = "software color palette";
-  if (project.tags.includes('Graph') || project.tags.includes('Data Extraction')) imageHint = "data graph chart";
-  if (project.tags.includes('3D Tracking') || project.tags.includes('Sensors')) imageHint = "3d tracking sensor";
-  if (project.tags.includes('Security') || project.title.toLowerCase().includes('attendance')) imageHint = "security code mobile";
+  if (project.imageUrl?.includes('colorTuner')) imageHint = "software color palette";
+  else if (project.imageUrl?.includes('graphReader')) imageHint = "data graph chart";
+  else if (project.imageUrl?.includes('dexterous')) imageHint = "3d tracking sensor";
+  else if (project.imageUrl?.includes('attendance')) imageHint = "security code mobile";
+  else if (project.videoUrl) imageHint = "youtube video play";
   
   return (
     <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -29,12 +30,11 @@ function ProjectCard({ project }: { project: Project }) {
       )}
       {project.videoUrl && (
         <div className="relative w-full h-48 md:h-56 bg-black flex items-center justify-center">
-          {/* Basic video embed placeholder. For actual video, use an iframe or video player component */}
           {project.videoUrl.includes("youtube.com") || project.videoUrl.includes("youtu.be") ? (
             <iframe
               width="100%"
               height="100%"
-              src={project.videoUrl.replace("watch?v=", "embed/")}
+              src={project.videoUrl.replace("watch?v=", "embed/").replace("youtu.be/", "youtube.com/embed/")}
               title={project.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -42,7 +42,16 @@ function ProjectCard({ project }: { project: Project }) {
             ></iframe>
           ) : (
             <>
-              <Video className="w-12 h-12 text-muted-foreground" />
+              {project.imageUrl && ( // Show placeholder image if video is not YouTube and image exists
+                <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  data-ai-hint={imageHint}
+                />
+              )}
+              <Video className="absolute w-12 h-12 text-white/70" />
               <p className="absolute bottom-2 left-2 text-xs text-white bg-black/50 px-1 py-0.5 rounded">Video Preview</p>
             </>
           )}

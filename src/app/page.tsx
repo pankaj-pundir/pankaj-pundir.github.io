@@ -17,7 +17,7 @@ export default function Home() {
             alt={userInfo.name}
             layout="fill"
             objectFit="cover"
-            data-ai-hint="person student"
+            data-ai-hint="person student" // Keep a general hint, specific image is now used
           />
         </div>
         <div className="text-center md:text-left">
@@ -43,7 +43,7 @@ export default function Home() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href={`mailto:${userInfo.socials.email || 'example@example.com'}`}> {/* Updated to use email from data.ts if available */}
+              <a href={`mailto:${userInfo.socials.email || 'default@example.com'}`}>
                 Contact Me <Mail className="ml-2 h-5 w-5" />
               </a>
             </Button>
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Overview Sections (Optional - Can be expanded or removed) */}
+      {/* Quick Overview Sections */}
       <section className="grid md:grid-cols-3 gap-8">
         <Card className="shadow-md hover:shadow-xl transition-shadow">
           <CardHeader>
@@ -76,9 +76,11 @@ export default function Home() {
           </CardHeader>
           <CardContent>
              <p className="text-sm text-muted-foreground">{workHistory.find(w => w.status === 'current')?.company || 'Focusing on personal projects and learning.'}</p>
-             <Button variant="link" asChild className="mt-2 px-0">
-              <Link href="/work">More About My Work <ArrowRight className="ml-1 h-4 w-4" /></Link>
-            </Button>
+             {workHistory.length > 0 && (
+                <Button variant="link" asChild className="mt-2 px-0">
+                    <Link href="/work">More About My Work <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                </Button>
+             )}
           </CardContent>
         </Card>
         <Card className="shadow-md hover:shadow-xl transition-shadow">
@@ -89,7 +91,7 @@ export default function Home() {
             <ul className="space-y-2">
               {blogPosts.slice(0, 2).map(b => (
                 <li key={b.id} className="text-sm text-muted-foreground hover:text-primary">
-                  <Link href="/blog">{b.title}</Link>
+                  <Link href={`/blog/${b.slug}`}>{b.title}</Link>
                 </li>
               ))}
                {blogPosts.length === 0 && <p className="text-sm text-muted-foreground">No blog posts yet.</p>}
