@@ -3,7 +3,7 @@ import type { Project, WorkItem, BlogPost } from './types';
 
 export const userInfo = {
   name: 'Pankaj Pundir',
-  title: 'B.Tech CSE Graduate | AI & Computer Vision Developer',
+  title: 'A.I enthusiast | Polymath',
   bio: "Hey, I'm Pankaj Pundir. I completed my B.Tech in Computer Science and Engineering. I'm skilled in Computer Vision, Deep Learning, coding, and logical thinking. Creating Desktop applications (Kivy) and web designing are hobbies of mine. The drive to create General AI is a core professional ambition. My technical skills include Python, C++, Computer Vision, Machine Learning, Deep Learning, and Kivy. I also enjoy watching movies, traveling, competitive coding, and have interests in meditation, hypnotism, and card tricks, which help me find patterns and understand people.",
   skills: ['Python', 'C++', 'OpenCV', 'Git', 'PyTorch', 'PySpark', 'Angular', 'Data Science', 'Computer Vision', 'Deep Learning', 'Kivy', 'Machine Learning', 'Dash', 'Plotly', 'Airflow', 'Big Data Technologies', 'Backend Development', 'API Integration', 'Business Rule Engine', 'Regulatory Reporting', 'Workflow Development', 'Image Classification', 'Text Categorization', 'Data Extraction', 'Assistive Technology', 'PHP', 'CSS', 'JavaScript', 'matplotlib'],
   socials: {
@@ -15,7 +15,7 @@ export const userInfo = {
     facebook: 'https://www.facebook.com/pankaj.pundir.92',
     skype: 'skype:pankaj.pundir369?chat',
   },
-  profileImage: "/images/profilepic.jpg", 
+  profileImage: "/assets/images/me.jpg", 
 };
 
 export const projects: Project[] = [
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     id: '1',
     title: 'ColorTuner',
     description: 'This software is made to visualize and extract the colors from the images with exact HSV coding. Thus very useful for color extraction, and color detection tuning.',
-    imageUrl: '/images/portfolio/colorTuner.gif', // Updated
+    imageUrl: '/assets/images/colorTuner.gif', // Updated
     videoUrl: '',
     tags: ['Kivy', 'Python', 'Image Processing', 'App design', 'Color Extractor'],
     liveLink: '#', // Keeping placeholder as per previous state
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     id: '2',
     title: 'Graph Reader (FigSense)',
     description: 'A fully automated GUI to read graphical data like bar and line chart and extract the information for the user. Line and bar charts can be extracted from images as well as pdf and classifying the images in categories. Finally extracting points, line, and textual data. Merging all the information and provide meaningful data to the user.',
-    imageUrl: '/images/portfolio/graphReader.jpg', // Updated
+    imageUrl: '/assets/images/graphReader.jpg', // Updated
     tags: ['Kivy', 'OpenCV', 'Computer Vision', 'Python'],
     liveLink: '#', // Keeping placeholder
     sourceLink: '#', // Keeping placeholder
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     id: '3',
     title: 'Dexterous',
     description: 'Software to replace GPS. It track position of object with accelerometer and gyroscope, thus mapping 3D object position.',
-    imageUrl: '/images/portfolio/dexterous.jpg', // Updated
+    imageUrl: '/assets/images/dexterous.jpg', // Updated
     tags: ['matplotlib', 'sensors', 'Python', '3D Tracking'],
     liveLink: '#', // Keeping placeholder
     sourceLink: '#', // Keeping placeholder
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     id: '4',
     title: 'Instant Attendance',
     description: 'To decrease the attendance time in college. OTP method is implemented with sharing a secret code with the students to mark the attendance parallelly. This process decreases the time as compared to serial attendance.',
-    imageUrl: '/images/portfolio/attendance.gif', // Updated
+    imageUrl: '/assets/images/attendance.gif', // Updated
     tags: ['PHP', 'CSS', 'JavaScript', 'Web Development'],
     liveLink: '#', // Keeping placeholder
     sourceLink: '#', // Keeping placeholder
@@ -72,7 +72,7 @@ export const workHistory: WorkItem[] = [
   {
     id: '1',
     company: 'GROWW',
-    companyLogoUrl: '/images/company-logos/groww-logo.png', // Placeholder, update with actual path if available
+    companyLogoUrl: 'https://resources.groww.in/web-assets/img/website-logo/groww-logo-light.svg', // Placeholder, update with actual path if available
     role: 'Software Engineer 2 (Credit Team)',
     duration: 'Feb 2022 - March 2024 | Banglore, India',
     description: [
@@ -86,7 +86,7 @@ export const workHistory: WorkItem[] = [
   {
     id: '2',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: '/images/company-logos/bny-mellon-logo.png', // Placeholder
+    companyLogoUrl: 'https://nexen.bnymellon.com/app/shared-wl-assets/17/img/whitelabel/mmi/logo_bny.png', // Placeholder
     role: 'Software Engineer',
     duration: 'July 2020 - Feb 2022 | Pune, India',
     description: [
@@ -100,7 +100,7 @@ export const workHistory: WorkItem[] = [
   {
     id: '3',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: '/images/company-logos/bny-mellon-logo.png', // Placeholder
+    companyLogoUrl: 'https://nexen.bnymellon.com/app/shared-wl-assets/17/img/whitelabel/mmi/logo_bny.png', // Placeholder
     role: 'Software Engineer Intern',
     duration: 'Jan - June 2020 | Pune, India',
     description: [
@@ -113,7 +113,7 @@ export const workHistory: WorkItem[] = [
   {
     id: '4',
     company: 'IIT ROPAR',
-    companyLogoUrl: '/images/company-logos/iit-ropar-logo.png', // Placeholder
+    companyLogoUrl: 'http://www.iitrpr.ac.in/sites/default/files/image.jpg', // Placeholder
     role: 'Research Intern',
     duration: 'May 2019 – Jul 2019 | Punjab, India',
     description: [
@@ -126,7 +126,7 @@ export const workHistory: WorkItem[] = [
   {
     id: '5',
     company: 'IIT ROPAR',
-    companyLogoUrl: '/images/company-logos/iit-ropar-logo.png', // Placeholder
+    companyLogoUrl: 'http://www.iitrpr.ac.in/sites/default/files/image.jpg', // Placeholder
     role: 'Research Intern',
     duration: 'May 2018 – Jul 2018 | Punjab, India',
     description: [
