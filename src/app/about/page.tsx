@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { userInfo, projects, workHistory, blogPosts } from '@/lib/data';
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight, Mail, Download } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
               </span>
             )}
           </div>
-          <div className="mt-8 flex gap-4 justify-center md:justify-start">
+          <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
             <Button asChild size="lg">
               <Link href="/"> {/* Changed to point to new project-focused homepage */}
                 View Projects <ArrowRight className="ml-2 h-5 w-5" />
@@ -61,6 +61,11 @@ export default function AboutPage() {
               <a href={`mailto:${userInfo.socials.email || 'default@example.com'}`}>
                 Contact Me <Mail className="ml-2 h-5 w-5" />
               </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/assets/resume.pdf" target="_blank" download="Pankaj_Pundir_Resume.pdf" aria-label="Download Resume">
+                Download Resume <Download className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>
