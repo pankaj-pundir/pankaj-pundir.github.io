@@ -63,7 +63,7 @@ export default function AboutPage() {
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link href="/assets/resume.pdf" target="_blank" download="Pankaj_Pundir_Resume.pdf" aria-label="Download Resume">
+              <Link href="/assets/pdf/resume.pdf" target="_blank" download="Pankaj_Pundir_Resume.pdf" aria-label="Download Resume">
                 Download Resume <Download className="ml-2 h-5 w-5" />
               </Link>
             </Button>
