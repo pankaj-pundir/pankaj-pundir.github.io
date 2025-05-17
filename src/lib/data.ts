@@ -13,9 +13,9 @@ export const userInfo = {
     medium: 'https://medium.com/@pankajpundir',
     email: 'pankaj.pundir369@gmail.com',
     facebook: 'https://www.facebook.com/pankaj.pundir.92',
-    skype: 'skype:pankaj.pundir369?chat', // Standard Skype URI
+    skype: 'skype:pankaj.pundir369?chat',
   },
-  profileImage: "/images/profilepic.jpg", // User needs to place this in public/images/
+  profileImage: "/images/profilepic.jpg", 
 };
 
 export const projects: Project[] = [
@@ -23,48 +23,48 @@ export const projects: Project[] = [
     id: '1',
     title: 'ColorTuner',
     description: 'This software is made to visualize and extract the colors from the images with exact HSV coding. Thus very useful for color extraction, and color detection tuning.',
-    imageUrl: '/images/portfolio/colorTuner.gif', // User needs to place this in public/images/portfolio/
+    imageUrl: '/images/portfolio/colorTuner.gif', // Updated
     videoUrl: '',
     tags: ['Kivy', 'Python', 'Image Processing', 'App design', 'Color Extractor'],
-    liveLink: '#',
+    liveLink: '#', // Keeping placeholder as per previous state
     sourceLink: 'https://github.com/pankaj-pundir/ColorTuner',
   },
   {
     id: '2',
     title: 'Graph Reader (FigSense)',
     description: 'A fully automated GUI to read graphical data like bar and line chart and extract the information for the user. Line and bar charts can be extracted from images as well as pdf and classifying the images in categories. Finally extracting points, line, and textual data. Merging all the information and provide meaningful data to the user.',
-    imageUrl: '/images/portfolio/graphReader.jpg', // User needs to place this in public/images/portfolio/
+    imageUrl: '/images/portfolio/graphReader.jpg', // Updated
     tags: ['Kivy', 'OpenCV', 'Computer Vision', 'Python'],
-    liveLink: '#',
-    sourceLink: '#',
+    liveLink: '#', // Keeping placeholder
+    sourceLink: '#', // Keeping placeholder
   },
   {
     id: '3',
     title: 'Dexterous',
     description: 'Software to replace GPS. It track position of object with accelerometer and gyroscope, thus mapping 3D object position.',
-    imageUrl: '/images/portfolio/dexterous.jpg', // User needs to place this in public/images/portfolio/
+    imageUrl: '/images/portfolio/dexterous.jpg', // Updated
     tags: ['matplotlib', 'sensors', 'Python', '3D Tracking'],
-    liveLink: '#',
-    sourceLink: '#',
+    liveLink: '#', // Keeping placeholder
+    sourceLink: '#', // Keeping placeholder
   },
   {
     id: '4',
     title: 'Instant Attendance',
     description: 'To decrease the attendance time in college. OTP method is implemented with sharing a secret code with the students to mark the attendance parallelly. This process decreases the time as compared to serial attendance.',
-    imageUrl: '/images/portfolio/attendance.gif', // User needs to place this in public/images/portfolio/
+    imageUrl: '/images/portfolio/attendance.gif', // Updated
     tags: ['PHP', 'CSS', 'JavaScript', 'Web Development'],
-    liveLink: '#',
-    sourceLink: '#',
+    liveLink: '#', // Keeping placeholder
+    sourceLink: '#', // Keeping placeholder
   },
   {
     id: '5',
     title: 'Project Video Demo',
     description: 'YouTube video showcasing a project.',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: 'https://placehold.co/600x400.png', // Keeping placeholder as it's a video project
     videoUrl: 'https://www.youtube.com/embed/JgTtuUGkSzw',
     tags: ['Video Demo', 'YouTube'],
     liveLink: 'https://www.youtube.com/watch?v=JgTtuUGkSzw',
-    sourceLink: '#',
+    sourceLink: '#', // Keeping placeholder
   }
 ];
 
@@ -72,7 +72,7 @@ export const workHistory: WorkItem[] = [
   {
     id: '1',
     company: 'GROWW',
-    companyLogoUrl: 'https://placehold.co/100x40.png',
+    companyLogoUrl: '/images/company-logos/groww-logo.png', // Placeholder, update with actual path if available
     role: 'Software Engineer 2 (Credit Team)',
     duration: 'Feb 2022 - March 2024 | Banglore, India',
     description: [
@@ -86,7 +86,7 @@ export const workHistory: WorkItem[] = [
   {
     id: '2',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: 'https://placehold.co/100x40.png',
+    companyLogoUrl: '/images/company-logos/bny-mellon-logo.png', // Placeholder
     role: 'Software Engineer',
     duration: 'July 2020 - Feb 2022 | Pune, India',
     description: [
@@ -100,7 +100,7 @@ export const workHistory: WorkItem[] = [
   {
     id: '3',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: 'https://placehold.co/100x40.png',
+    companyLogoUrl: '/images/company-logos/bny-mellon-logo.png', // Placeholder
     role: 'Software Engineer Intern',
     duration: 'Jan - June 2020 | Pune, India',
     description: [
@@ -113,11 +113,11 @@ export const workHistory: WorkItem[] = [
   {
     id: '4',
     company: 'IIT ROPAR',
-    companyLogoUrl: 'https://placehold.co/100x40.png',
+    companyLogoUrl: '/images/company-logos/iit-ropar-logo.png', // Placeholder
     role: 'Research Intern',
     duration: 'May 2019 – Jul 2019 | Punjab, India',
     description: [
-      'Chart Image classification using Deep learning and ML Techniques.',
+      'Chart Image classification using Deep learning and ML Techniques',
       'Designed Region-based text categorization technique for Chart images.',
     ],
     technologies: ['Deep Learning', 'Machine Learning', 'Image Classification', 'Text Categorization'],
@@ -126,7 +126,7 @@ export const workHistory: WorkItem[] = [
   {
     id: '5',
     company: 'IIT ROPAR',
-    companyLogoUrl: 'https://placehold.co/100x40.png',
+    companyLogoUrl: '/images/company-logos/iit-ropar-logo.png', // Placeholder
     role: 'Research Intern',
     duration: 'May 2018 – Jul 2018 | Punjab, India',
     description: [
