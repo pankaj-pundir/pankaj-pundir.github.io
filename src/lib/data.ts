@@ -5,7 +5,7 @@ export const userInfo = {
   name: 'Pankaj Pundir',
   title: 'B.Tech CSE Graduate | AI & Computer Vision Developer',
   bio: "Hey, I'm Pankaj Pundir. I completed my B.Tech in Computer Science and Engineering. I'm skilled in Computer Vision, Deep Learning, coding, and logical thinking. Creating Desktop applications (Kivy) and web designing are hobbies of mine. The drive to create General AI is a core professional ambition. My technical skills include Python, C++, Computer Vision, Machine Learning, Deep Learning, and Kivy. I also enjoy watching movies, traveling, competitive coding, and have interests in meditation, hypnotism, and card tricks, which help me find patterns and understand people.",
-  skills: ['Python', 'C++', 'OpenCV', 'Git', 'PyTorch', 'PySpark', 'Angular', 'Data Science', 'Computer Vision', 'Deep Learning', 'Kivy', 'Machine Learning', 'Dash', 'Plotly', 'Airflow', 'Big Data Technologies'],
+  skills: ['Python', 'C++', 'OpenCV', 'Git', 'PyTorch', 'PySpark', 'Angular', 'Data Science', 'Computer Vision', 'Deep Learning', 'Kivy', 'Machine Learning', 'Dash', 'Plotly', 'Airflow', 'Big Data Technologies', 'Backend Development', 'API Integration', 'Business Rule Engine', 'Regulatory Reporting', 'Workflow Development', 'Image Classification', 'Text Categorization', 'Data Extraction', 'Assistive Technology'],
   socials: {
     github: 'https://github.com/pankaj-pundir',
     linkedin: 'https://www.linkedin.com/in/pankaj-pundir',
@@ -13,9 +13,9 @@ export const userInfo = {
     medium: 'https://medium.com/@pankajpundir',
     email: 'pankaj.pundir369@gmail.com',
     facebook: 'https://www.facebook.com/pankaj.pundir.92',
-    skype: 'https://www.skype.com/pankaj.pundir369',
+    skype: 'https://www.skype.com/pankaj.pundir369', // Using skype: protocol is more standard
   },
-  profileImage: "/images/profilepic.jpg", 
+  profileImage: "/images/profilepic.jpg",
 };
 
 export const projects: Project[] = [
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     imageUrl: '/images/portfolio/colorTuner.gif',
     videoUrl: '',
     tags: ['Kivy', 'Python', 'Image Processing', 'App design', 'Color Extractor'],
-    liveLink: '#', 
+    liveLink: '#',
     sourceLink: 'https://github.com/pankaj-pundir/ColorTuner',
   },
   {
@@ -35,8 +35,8 @@ export const projects: Project[] = [
     description: 'A fully automated GUI to read graphical data like bar and line chart and extract the information for the user. Line and bar charts can be extracted from images as well as pdf and classifying the images in categories. Finally extracting points, line, and textual data. Merging all the information and provide meaningful data to the user.',
     imageUrl: '/images/portfolio/graphReader.jpg',
     tags: ['Kivy', 'OpenCV', 'Computer Vision', 'Python'],
-    liveLink: '#', 
-    sourceLink: '#', 
+    liveLink: '#',
+    sourceLink: '#',
   },
   {
     id: '3',
@@ -44,8 +44,8 @@ export const projects: Project[] = [
     description: 'Software to replace GPS. It track position of object with accelerometer and gyroscope, thus mapping 3D object position.',
     imageUrl: '/images/portfolio/dexterous.jpg',
     tags: ['matplotlib', 'sensors', 'Python', '3D Tracking'],
-    liveLink: '#', 
-    sourceLink: '#', 
+    liveLink: '#',
+    sourceLink: '#',
   },
   {
     id: '4',
@@ -53,14 +53,14 @@ export const projects: Project[] = [
     description: 'To decrease the attendance time in college. OTP method is implemented with sharing a secret code with the students to mark the attendance parallelly. This process decreases the time as compared to serial attendance.',
     imageUrl: '/images/portfolio/attendance.gif',
     tags: ['PHP', 'CSS', 'JS', 'Web Development'],
-    liveLink: '#', 
-    sourceLink: '#', 
+    liveLink: '#',
+    sourceLink: '#',
   },
   {
     id: '5',
     title: 'Project Video Demo',
     description: 'YouTube video showcasing a project.',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: 'https://placehold.co/600x400.png', // Keep a placeholder if video is primary
     videoUrl: 'https://www.youtube.com/embed/JgTtuUGkSzw',
     tags: ['Video Demo', 'YouTube'],
     liveLink: 'https://www.youtube.com/watch?v=JgTtuUGkSzw',
@@ -79,7 +79,7 @@ export const workHistory: WorkItem[] = [
       'Integrated major banks [IDFC] and NBFCs [ABFL,GCS].',
       'Designed User journey and contributed on Business rule engine to determine user Credit worthiness and generate Real Time offers.',
     ],
-    technologies: ['Backend Development', 'API Integration', 'Business Rule Engine'], // Inferred technologies
+    technologies: ['Backend Development', 'API Integration', 'Business Rule Engine'],
     status: 'past',
   },
   {
