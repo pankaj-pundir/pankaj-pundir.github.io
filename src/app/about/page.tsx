@@ -16,10 +16,10 @@ export default function AboutPage() {
   return (
     <div className="space-y-12">
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-12 bg-card rounded-xl shadow-xl glass-backdrop">
+      <section className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-12 bg-card rounded-xl shadow-xl">
         <div className="relative h-48 w-48 md:h-64 md:w-64 rounded-full overflow-hidden shadow-md shrink-0">
           <Image
-            src={userInfo.profileImage || '/images/profilepic.jpg'}
+            src={userInfo.profileImage || 'https://placehold.co/256x256.png'}
             alt={userInfo.name}
             layout="fill"
             objectFit="cover"
@@ -64,16 +64,18 @@ export default function AboutPage() {
             <CardTitle>Recent Projects</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-2">
-              {projects.slice(0, 2).map(p => (
-                <li key={p.id} className="text-sm text-muted-foreground hover:text-primary">
-                  <Link href="/">{p.title}</Link> {/* Changed to point to new project-focused homepage */}
-                </li>
-              ))}
-            </ul>
-             <Button variant="link" asChild className="mt-2 px-0">
-              <Link href="/">View All Projects <ArrowRight className="ml-1 h-4 w-4" /></Link> {/* Changed to point to new project-focused homepage */}
-            </Button>
+            <div> {/* Wrapper div */}
+              <ul className="space-y-2">
+                {projects.slice(0, 2).map(p => (
+                  <li key={p.id} className="text-sm text-muted-foreground hover:text-primary">
+                    <Link href="/">{p.title}</Link>
+                  </li>
+                ))}
+              </ul>
+               <Button variant="link" asChild className="mt-2 px-0">
+                <Link href="/">View All Projects <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+            </div>
           </CardContent>
         </Card>
         <Card className="shadow-md hover:shadow-xl transition-shadow">
