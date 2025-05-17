@@ -5,11 +5,12 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Video, Search as SearchIcon } from "lucide-react"; // Added SearchIcon
-import { projects } from "@/lib/data";
+import { ExternalLink, Github, Video, Search as SearchIcon, Palette } from "lucide-react"; // Added Palette, removed unused icons
+import { projects, userInfo } from "@/lib/data"; // Added userInfo
 import type { Project } from "@/lib/types";
-import { Input } from "@/components/ui/input"; // Added Input
-import { useState, useEffect } from 'react'; // Added for search state
+import { Input } from "@/components/ui/input";
+import { useState, useEffect } from 'react';
+// Removed ThemeGeneratorForm import as it was deleted earlier
 
 export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -19,7 +20,7 @@ export default function HomePage() {
     setMounted(true);
   }, []);
 
-  // Simple client-side filter (can be expanded later)
+  // Simple client-side filter
   const filteredProjects = projects.filter(project =>
     project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -41,6 +42,7 @@ export default function HomePage() {
               type="search"
               placeholder="Search projects..."
               className="w-full pl-10 pr-4 py-3 rounded-lg shadow-md bg-card/80 border-border"
+              value={searchTerm} // Ensure Input is controlled
               disabled
             />
           </div>
@@ -80,6 +82,8 @@ export default function HomePage() {
           {searchTerm ? `No projects found for "${searchTerm}".` : "No projects to display yet. Check back soon!"}
         </p>
       )}
+
+      {/* Removed ThemeGeneratorForm section as the component was deleted */}
     </div>
   );
 }
