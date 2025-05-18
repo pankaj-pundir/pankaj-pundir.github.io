@@ -1,4 +1,5 @@
 
+
 "use client"
 
 import * as React from "react"
@@ -199,7 +200,7 @@ const Sidebar = React.forwardRef<
           <SheetContent
             data-sidebar="sidebar"
             data-mobile="true"
-            className="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground shadow-xl [&>button]:hidden"
+            className="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground shadow-xl " // Removed [&>button]:hidden to allow explicit close button if needed
             style={
               {
                 "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
@@ -207,9 +208,8 @@ const Sidebar = React.forwardRef<
             }
             side={side}
           >
-            {/* Added SheetHeader and SheetTitle for accessibility */}
-            <SheetHeader className="sr-only">
-              <SheetTitle>Main Navigation Menu</SheetTitle>
+            <SheetHeader className="sr-only"> {/* Visually hidden title for accessibility */}
+              <SheetTitle>Main Navigation</SheetTitle>
             </SheetHeader>
             <div className="flex h-full w-full flex-col">{children}</div>
           </SheetContent>
@@ -273,9 +273,7 @@ const SidebarTrigger = React.forwardRef<
 >(({ className, onClick, ...props }, ref) => {
   const { toggleSidebar, isMobile, openMobile } = useSidebar();
 
-  // If it's mobile and the mobile sheet is open, hide this trigger.
-  // The Sheet's 'X' button will be used to close.
-  if (isMobile && openMobile) {
+  if (isMobile && openMobile) { // If on mobile and sheet is open, hide this trigger
     return null;
   }
 
@@ -547,9 +545,12 @@ const sidebarMenuButtonVariants = cva(
   }
 )
 
+type SidebarMenuButtonElement = HTMLButtonElement | HTMLAnchorElement;
+
 const SidebarMenuButton = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<"button"> & {
+  SidebarMenuButtonElement, // Allow both button and anchor elements
+  React.ComponentProps<"button"> & React.ComponentProps<"a"> & { // Merge props
+    as?: "button" | "a"; // Explicitly allow choosing the element type
     asChild?: boolean
     isActive?: boolean
     tooltip?: string | React.ComponentProps<typeof TooltipContent>
@@ -557,17 +558,28 @@ const SidebarMenuButton = React.forwardRef<
 >(
   (
     {
+      as: CompOverride, // Use 'as' to determine the component type
       asChild = false,
       isActive = false,
       variant = "default",
       size = "default",
       tooltip,
       className,
+      href, // Accept href prop
       ...props
     },
     ref
   ) => {
-    const Comp = asChild ? Slot : "button"
+    // Determine the component to render: 'a' if href is present, otherwise 'button', unless overridden by 'as' or 'asChild'
+    let Comp: React.ElementType = "button";
+    if (asChild) {
+      Comp = Slot;
+    } else if (CompOverride) {
+      Comp = CompOverride;
+    } else if (href) {
+      Comp = "a";
+    }
+    
     const { isMobile, state } = useSidebar()
 
     const button = (
@@ -577,7 +589,8 @@ const SidebarMenuButton = React.forwardRef<
         data-size={size}
         data-active={isActive}
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
-        {...props}
+        href={href} // Pass href if Comp is 'a'
+        {...props} // Spread remaining props (like onClick for button, or target for a)
       />
     )
 
@@ -777,3 +790,4 @@ export {
 }
 
     
+

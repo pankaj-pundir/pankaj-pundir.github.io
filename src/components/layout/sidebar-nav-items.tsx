@@ -3,12 +3,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutGrid, Laptop, Newspaper, Link2, User } from 'lucide-react'; // Changed Briefcase to LayoutGrid, removed HomeIcon
+import { LayoutGrid, Laptop, User, Link2 } from 'lucide-react';
 import { SidebarMenu, SidebarMenuItem, SidebarMenuButton } from '@/components/ui/sidebar';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { href: '/', label: 'Projects', icon: LayoutGrid }, // Changed icon from Briefcase to LayoutGrid
+  { href: '/', label: 'Projects', icon: LayoutGrid },
   { href: '/work', label: 'Work', icon: Laptop },
   // { href: '/blog', label: 'Blog', icon: Newspaper },
   { href: '/about', label: 'About Me', icon: User },
@@ -22,8 +22,10 @@ export default function SidebarNavItems() {
     <SidebarMenu>
       {navItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href} legacyBehavior passHref>
+          <Link legacyBehavior passHref href={item.href}>
             <SidebarMenuButton
+              as="a" // Explicitly render SidebarMenuButton as an anchor tag
+              href={item.href} // Pass href to ensure it's treated as a link by SidebarMenuButton
               className={cn(
                 pathname === item.href ? 'bg-sidebar-accent text-sidebar-accent-foreground' : 'hover:bg-sidebar-accent/80'
               )}
