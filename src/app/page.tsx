@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Image from "next/image"; // Still needed for tag logos
+import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink, Github, Video, Search as SearchIcon } from "lucide-react";
 import { projects, userInfo } from "@/lib/data";
@@ -19,7 +19,6 @@ export default function HomePage() {
     setMounted(true);
   }, []);
 
-  // Simple client-side filter
   const filteredProjects = projects.filter(project =>
     project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -27,7 +26,6 @@ export default function HomePage() {
   );
 
   if (!mounted) {
-    // To avoid hydration mismatch for search input or initial project list
     return (
       <div className="space-y-8">
         <header className="space-y-4">
@@ -86,19 +84,25 @@ export default function HomePage() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
+  let displayImageUrl: string | undefined = project.imageUrl;
+  if (project.imageUrls && project.imageUrls.length > 0) {
+    displayImageUrl = project.imageUrls[0];
+  }
+  
   let imageHint = "project abstract";
-  if (project.imageUrl?.includes('colorTuner')) imageHint = "software color palette";
-  else if (project.imageUrl?.includes('graphReader')) imageHint = "data graph chart";
-  else if (project.imageUrl?.includes('dexterous')) imageHint = "3d tracking sensor";
-  else if (project.imageUrl?.includes('attendance')) imageHint = "security code mobile";
+  if (project.title.toLowerCase().includes('cortex-bot')) imageHint = "stock market trading graph";
+  else if (displayImageUrl?.includes('colorTuner')) imageHint = "software color palette";
+  else if (displayImageUrl?.includes('graphReader')) imageHint = "data graph chart";
+  else if (displayImageUrl?.includes('dexterous')) imageHint = "3d tracking sensor";
+  else if (displayImageUrl?.includes('attendance')) imageHint = "security code mobile";
   else if (project.videoUrl) imageHint = "youtube video play";
   
   return (
     <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-      {project.imageUrl && !project.videoUrl && (
+      {displayImageUrl && !project.videoUrl && (
         <div className="relative w-full h-48 md:h-56">
           <img
-            src={project.imageUrl}
+            src={displayImageUrl}
             alt={project.title}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             data-ai-hint={imageHint}
@@ -119,9 +123,9 @@ function ProjectCard({ project }: { project: Project }) {
             ></iframe>
           ) : (
             <>
-              {project.imageUrl && ( 
+              {displayImageUrl && ( 
                 <img
-                  src={project.imageUrl}
+                  src={displayImageUrl}
                   alt={project.title}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
                   data-ai-hint={imageHint}
@@ -142,7 +146,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.tags.map((tag) => (
             <span key={tag} className="flex items-center px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded-md">
               <Image
-                src={`https://placehold.co/16x16.png`} // Placeholder for tag logo
+                src={'https://placehold.co/16x16.png'}
                 alt={`${tag} logo`}
                 width={12}
                 height={12}

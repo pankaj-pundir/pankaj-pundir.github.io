@@ -3,7 +3,8 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  imageUrl?: string;
+  imageUrl?: string; // For single image projects
+  imageUrls?: string[]; // For multiple image projects
   videoUrl?: string;
   tags: string[];
   liveLink?: string;
@@ -13,7 +14,7 @@ export interface Project {
 export interface WorkItem {
   id: string;
   company: string;
-  companyLogoUrl?: string; // Added for company logo
+  companyLogoUrl?: string;
   role: string;
   duration: string;
   description: string[];

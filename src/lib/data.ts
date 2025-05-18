@@ -5,23 +5,38 @@ export const userInfo = {
   name: 'Pankaj Pundir',
   title: 'A.I enthusiast | Polymath',
   bio: "Hey, I'm Pankaj Pundir. I completed my B.Tech in Computer Science and Engineering. I'm skilled in Computer Vision, Deep Learning, coding, and logical thinking. Creating Desktop applications (Kivy) and web designing are hobbies of mine. The drive to create General AI is a core professional ambition. My technical skills include Python, C++, Computer Vision, Machine Learning, Deep Learning, and Kivy. I also enjoy watching movies, traveling, competitive coding, and have interests in meditation, hypnotism, and card tricks, which help me find patterns and understand people.",
-  skills: ['Python', 'C++', 'OpenCV', 'Git', 'PyTorch', 'PySpark', 'Angular', 'Data Science', 'Computer Vision', 'Deep Learning', 'Kivy', 'Machine Learning', 'Dash', 'Plotly', 'Airflow', 'Big Data Technologies', 'Backend Development', 'API Integration', 'Business Rule Engine', 'Regulatory Reporting', 'Workflow Development', 'Image Classification', 'Text Categorization', 'Assistive Technology', 'PHP', 'CSS', 'JavaScript', 'matplotlib', 'Software Engineering'],
+  skills: ['Python', 'C++', 'OpenCV', 'Git', 'PyTorch', 'PySpark', 'Angular', 'Data Science', 'Computer Vision', 'Deep Learning', 'Kivy', 'Machine Learning', 'Dash', 'Plotly', 'Airflow', 'Big Data Technologies', 'Backend Development', 'API Integration', 'Business Rule Engine', 'Regulatory Reporting', 'Workflow Development', 'Image Classification', 'Text Categorization', 'Assistive Technology', 'PHP', 'CSS', 'JavaScript', 'matplotlib', 'Software Engineering', 'Java', 'Golang', 'Kubernetes', 'Google Cloud', 'React', 'FastAPI', 'MongoDB', 'PostgreSQL', 'Redis', 'Microservices'],
   socials: {
     github: 'https://github.com/pankaj-pundir',
     linkedin: 'https://www.linkedin.com/in/pankaj-pundir',
     twitter: 'https://www.twitter.com/twt_curious_guy',
+    facebook: 'https://www.facebook.com/pankaj.pundir.92',
+    skype: 'https://www.skype.com/pankaj.pundir369',
     email: 'pankaj.pundir369@gmail.com',
+    medium: '', // Add medium link if available
   },
-  profileImage: "/assets/images/profilepic.jpg", 
+  profileImage: "/images/profilepic.jpg", 
 };
 
-//  images are saved in the path /public/assets/images/*
 export const projects: Project[] = [
+  {
+    id: 'cortex-bot',
+    title: 'CORTEX-BOT | Manage Stocks Wisely',
+    description: 'Algo Trading platform to provide valuable trade suggestions using Technical analysis and Machine learning techniques. This is an ongoing long-term project (2+ years). Key features include: Place Trade via a broker, Backtest your strategy [5yrs data], Analysis Tools and visualization, Trade suggestions via WhatsApp.',
+    imageUrls: [ // Using imageUrls for multiple images
+      'https://placehold.co/600x400.png', // Placeholder 1
+      'https://placehold.co/600x400.png', // Placeholder 2
+      'https://placehold.co/600x400.png'  // Placeholder 3
+    ], 
+    tags: ['React', 'FastAPI', 'MongoDB', 'PostgreSQL', 'Redis', 'Google Cloud', 'Microservices', 'Algo Trading', 'Machine Learning', 'Technical Analysis'],
+    liveLink: '#', // Replace with actual link if available
+    sourceLink: '#', // Replace with actual link if available
+  },
   {
     id: '1',
     title: 'ColorTuner',
     description: 'This software is made to visualize and extract the colors from the images with exact HSV coding. Thus very useful for color extraction, and color detection tuning.',
-    imageUrl: '/assets/images//colorTuner.gif',
+    imageUrl: '/images/portfolio/colorTuner.gif',
     videoUrl: '',
     tags: ['Kivy', 'Python', 'Image Processing', 'App design', 'Color Extractor'],
     liveLink: '#',
@@ -31,7 +46,7 @@ export const projects: Project[] = [
     id: '2',
     title: 'Graph Reader (FigSense)',
     description: 'A fully automated GUI to read graphical data like bar and line chart and extract the information for the user. Line and bar charts can be extracted from images as well as pdf and classifying the images in categories. Finally extracting points, line, and textual data. Merging all the information and provide meaningful data to the user.',
-    imageUrl: '/assets/images/graphReader.jpg',
+    imageUrl: '/images/portfolio/graphReader.jpg',
     tags: ['Kivy', 'OpenCV', 'Computer Vision', 'Python'],
     liveLink: '#',
     sourceLink: '#',
@@ -40,7 +55,7 @@ export const projects: Project[] = [
     id: '3',
     title: 'Dexterous',
     description: 'Software to replace GPS. It track position of object with accelerometer and gyroscope, thus mapping 3D object poesition.',
-    imageUrl: '/assets/images/dexterous.jpg',
+    imageUrl: '/images/portfolio/dexterous.jpg',
     tags: ['matplotlib', 'sensors', 'Python', '3D Tracking'],
     liveLink: '#',
     sourceLink: '#',
@@ -49,16 +64,16 @@ export const projects: Project[] = [
     id: '4',
     title: 'Instant Attendance',
     description: 'To decrease the attendance time in college. OTP method is implemented with sharing a secret code with the students to mark the attendance parallelly. This process decreases the time as compared to serial attendance.',
-    imageUrl: '/assets/images/attendance.gif',
+    imageUrl: '/images/portfolio/attendance.gif',
     tags: ['PHP', 'CSS', 'JavaScript', 'Web Development'],
     liveLink: '#',
     sourceLink: '#',
   },
   {
     id: '5',
-    title: 'Project Video Demo',
-    description: 'YouTube video showcasing a project.',
-    imageUrl: 'https://placehold.co/600x400.png',
+    title: 'Project Video Demo (Example)',
+    description: 'YouTube video showcasing a project (this is an example entry).',
+    imageUrl: 'https://placehold.co/600x400.png', // Fallback image if video can't load or for a static preview
     videoUrl: 'https://www.youtube.com/embed/JgTtuUGkSzw',
     tags: ['Video Demo', 'YouTube'],
     liveLink: 'https://www.youtube.com/watch?v=JgTtuUGkSzw',
@@ -68,33 +83,33 @@ export const projects: Project[] = [
 
 export const workHistory: WorkItem[] = [
   {
-    id: '6', // New ID
+    id: 'google-swe3',
     company: 'Google',
-    companyLogoUrl: 'https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_200_200/company-logo_200_200/0/1631311446380?e=1752710400&v=beta&t=_zAJJHkDhi7EvfyEGIEBojzv4ci4mmIAm6I_5Xqnua8',
-    role: 'Software Engineer 3', // Assuming a generic role, please update if needed
+    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
+    role: 'Software Engineer 3 (L4)',
     duration: 'June 2024 - Present',
     description: [
-      'Working on private cloud technologies and ensuring Backup and Restore works efficiently', // Placeholder description
+      'Working with private cloud in Backup and Restore team.',
     ],
-    technologies: ['Software Engineering','Kubernetes','Go'], // Placeholder, please update
+    technologies: ['Golang', 'Kubernetes', 'Google Cloud'],
     status: 'current',
   },
   {
-    id: '7', // New ID
+    id: 'phonepe-sde2',
     company: 'PhonePe',
-    companyLogoUrl: 'https://media.licdn.com/dms/image/v2/D560BAQHLOrShxWW33g/company-logo_200_200/company-logo_200_200/0/1732870614932/phonepe_internet_logo?e=1752710400&v=beta&t=z4qwuh1wuNPC1V7aVbhwzcLwXJ2rir_w55jsArglG9Y',
-    role: 'Software Engineer 2', // Assuming a generic role, please update if needed
+    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
+    role: 'SDE 2',
     duration: 'April 2024 - May 2024',
     description: [
-      'Worked on NCMC project and experienced the sheer data volume', // Placeholder description
+      'Worked on the POS machines and NCMC card project.',
     ],
-    technologies: ['Software Engineering','Java'], // Placeholder, please update
+    technologies: ['Java'],
     status: 'past',
   },
   {
-    id: '1',
+    id: 'groww-sde2',
     company: 'GROWW',
-    companyLogoUrl: 'https://resources.groww.in/web-assets/img/website-logo/groww-logo-light.svg',
+    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
     role: 'Software Engineer 2 (Credit Team)',
     duration: 'Feb 2022 - March 2024 | Banglore, India',
     description: [
@@ -106,9 +121,9 @@ export const workHistory: WorkItem[] = [
     status: 'past',
   },
   {
-    id: '2',
+    id: 'bnym-swe',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: 'https://nexen.bnymellon.com/app/shared-wl-assets/17/img/whitelabel/mmi/logo_bny.png',
+    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
     role: 'Software Engineer',
     duration: 'July 2020 - Feb 2022 | Pune, India',
     description: [
@@ -120,9 +135,9 @@ export const workHistory: WorkItem[] = [
     status: 'past',
   },
   {
-    id: '3',
+    id: 'bnym-intern',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: 'https://nexen.bnymellon.com/app/shared-wl-assets/17/img/whitelabel/mmi/logo_bny.png',
+    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
     role: 'Software Engineer Intern',
     duration: 'Jan - June 2020 | Pune, India',
     description: [
@@ -133,9 +148,9 @@ export const workHistory: WorkItem[] = [
     status: 'past',
   },
   {
-    id: '4',
+    id: 'iitrpr-intern1',
     company: 'IIT ROPAR',
-    companyLogoUrl: 'http://www.iitrpr.ac.in/sites/default/files/image.jpg',
+    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
     role: 'Research Intern',
     duration: 'May 2019 – Jul 2019 | Punjab, India',
     description: [
@@ -146,9 +161,9 @@ export const workHistory: WorkItem[] = [
     status: 'past',
   },
   {
-    id: '5',
+    id: 'iitrpr-intern2',
     company: 'IIT ROPAR',
-    companyLogoUrl: 'http://www.iitrpr.ac.in/sites/default/files/image.jpg',
+    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
     role: 'Research Intern',
     duration: 'May 2018 – Jul 2018 | Punjab, India',
     description: [
@@ -161,4 +176,3 @@ export const workHistory: WorkItem[] = [
 ];
 
 export const blogPosts: BlogPost[] = [];
-
