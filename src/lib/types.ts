@@ -2,6 +2,7 @@
 export interface Project {
   id: string;
   title: string;
+  subheading?: string; // Added subheading
   description: string;
   imageUrl?: string; // For single image projects
   imageUrls?: string[]; // For multiple image projects
@@ -9,6 +10,7 @@ export interface Project {
   tags: string[];
   liveLink?: string;
   sourceLink?: string;
+  researchPaperLink?: string; // Added research paper link
 }
 
 export interface WorkItem {

@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Video, Search as SearchIcon } from "lucide-react";
+import { ExternalLink, Github, Video, Search as SearchIcon, FileText } from "lucide-react";
 import { projects, userInfo } from "@/lib/data";
 import type { Project } from "@/lib/types";
 import { Input } from "@/components/ui/input";
@@ -21,6 +21,7 @@ export default function HomePage() {
 
   const filteredProjects = projects.filter(project =>
     project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (project.subheading && project.subheading.toLowerCase().includes(searchTerm.toLowerCase())) ||
     project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
     project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
   );
@@ -91,6 +92,7 @@ function ProjectCard({ project }: { project: Project }) {
   
   let imageHint = "project abstract";
   if (project.title.toLowerCase().includes('cortex-bot')) imageHint = "stock market trading graph";
+  else if (project.title.toLowerCase().includes('poconet')) imageHint = "road pothole detection";
   else if (displayImageUrl?.includes('colorTuner')) imageHint = "software color palette";
   else if (displayImageUrl?.includes('graphReader')) imageHint = "data graph chart";
   else if (displayImageUrl?.includes('dexterous')) imageHint = "3d tracking sensor";
@@ -139,6 +141,7 @@ function ProjectCard({ project }: { project: Project }) {
       )}
       <CardHeader>
         <CardTitle className="text-xl">{project.title}</CardTitle>
+        {project.subheading && <p className="text-sm font-medium text-muted-foreground -mt-1">{project.subheading}</p>}
         <CardDescription className="text-sm h-20 overflow-y-auto">{project.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
@@ -159,7 +162,14 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
       </CardContent>
-      <CardFooter className="flex gap-2 justify-end">
+      <CardFooter className="flex gap-2 justify-end flex-wrap">
+        {project.researchPaperLink && (
+          <Button variant="outline" size="sm" asChild>
+            <Link href={project.researchPaperLink} target="_blank">
+              <FileText className="mr-2 h-4 w-4" /> Paper
+            </Link>
+          </Button>
+        )}
         {project.sourceLink && project.sourceLink !== '#' && (
           <Button variant="outline" size="sm" asChild>
             <Link href={project.sourceLink} target="_blank">

@@ -11,7 +11,7 @@ export const userInfo = {
     linkedin: 'https://www.linkedin.com/in/pankaj-pundir',
     twitter: 'https://www.twitter.com/twt_curious_guy',
     facebook: 'https://www.facebook.com/pankaj.pundir.92',
-    skype: 'https://www.skype.com/pankaj.pundir369',
+    skype: 'skype:pankaj.pundir369?chat',
     email: 'pankaj.pundir369@gmail.com',
     medium: '', // Add medium link if available
   },
@@ -21,16 +21,17 @@ export const userInfo = {
 export const projects: Project[] = [
   {
     id: 'cortex-bot',
-    title: 'CORTEX-BOT | Manage Stocks Wisely',
+    title: 'CORTEX-BOT',
+    subheading: 'Manage Stocks Wisely',
     description: 'Algo Trading platform to provide valuable trade suggestions using Technical analysis and Machine learning techniques. This is an ongoing long-term project (2+ years). Key features include: Place Trade via a broker, Backtest your strategy [5yrs data], Analysis Tools and visualization, Trade suggestions via WhatsApp.',
-    imageUrls: [ // Using imageUrls for multiple images
-      'https://placehold.co/600x400.png', // Placeholder 1
-      'https://placehold.co/600x400.png', // Placeholder 2
-      'https://placehold.co/600x400.png'  // Placeholder 3
+    imageUrls: [
+      'https://placehold.co/600x400.png', 
+      'https://placehold.co/600x400.png', 
+      'https://placehold.co/600x400.png'  
     ], 
     tags: ['React', 'FastAPI', 'MongoDB', 'PostgreSQL', 'Redis', 'Google Cloud', 'Microservices', 'Algo Trading', 'Machine Learning', 'Technical Analysis'],
-    liveLink: '#', // Replace with actual link if available
-    sourceLink: '#', // Replace with actual link if available
+    liveLink: '#', 
+    sourceLink: '#', 
   },
   {
     id: '1',
@@ -70,14 +71,16 @@ export const projects: Project[] = [
     sourceLink: '#',
   },
   {
-    id: '5',
-    title: 'Project Video Demo (Example)',
-    description: 'YouTube video showcasing a project (this is an example entry).',
-    imageUrl: 'https://placehold.co/600x400.png', // Fallback image if video can't load or for a static preview
+    id: 'poconet',
+    title: 'POCONET',
+    subheading: 'A pathway to Safety',
+    description: 'Designed a system - POthole COnvolution Network to automate the process of detection of potholes for road assessment. Research paper published on this work.',
+    imageUrl: 'https://placehold.co/600x400.png', // Fallback image for video
     videoUrl: 'https://www.youtube.com/embed/JgTtuUGkSzw',
-    tags: ['Video Demo', 'YouTube'],
+    tags: ['Computer Vision', 'Deep Learning', 'Research Paper', 'Road Safety', 'Python'],
     liveLink: 'https://www.youtube.com/watch?v=JgTtuUGkSzw',
-    sourceLink: '#',
+    researchPaperLink: 'https://link.springer.com/chapter/10.1007/978-3-030-67187-7_31',
+    sourceLink: '#', // Add source link if available
   }
 ];
 
@@ -85,7 +88,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'google-swe3',
     company: 'Google',
-    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
+    companyLogoUrl: 'https://placehold.co/100x40.png',
     role: 'Software Engineer 3 (L4)',
     duration: 'June 2024 - Present',
     description: [
@@ -97,7 +100,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'phonepe-sde2',
     company: 'PhonePe',
-    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
+    companyLogoUrl: 'https://placehold.co/100x40.png',
     role: 'SDE 2',
     duration: 'April 2024 - May 2024',
     description: [
@@ -109,7 +112,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'groww-sde2',
     company: 'GROWW',
-    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
+    companyLogoUrl: 'https://placehold.co/100x40.png',
     role: 'Software Engineer 2 (Credit Team)',
     duration: 'Feb 2022 - March 2024 | Banglore, India',
     description: [
@@ -123,7 +126,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'bnym-swe',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
+    companyLogoUrl: 'https://placehold.co/100x40.png',
     role: 'Software Engineer',
     duration: 'July 2020 - Feb 2022 | Pune, India',
     description: [
@@ -137,7 +140,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'bnym-intern',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
+    companyLogoUrl: 'https://placehold.co/100x40.png',
     role: 'Software Engineer Intern',
     duration: 'Jan - June 2020 | Pune, India',
     description: [
@@ -150,7 +153,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'iitrpr-intern1',
     company: 'IIT ROPAR',
-    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
+    companyLogoUrl: 'https://placehold.co/100x40.png',
     role: 'Research Intern',
     duration: 'May 2019 – Jul 2019 | Punjab, India',
     description: [
@@ -163,7 +166,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'iitrpr-intern2',
     company: 'IIT ROPAR',
-    companyLogoUrl: 'https://placehold.co/100x40.png', // Placeholder
+    companyLogoUrl: 'https://placehold.co/100x40.png',
     role: 'Research Intern',
     duration: 'May 2018 – Jul 2018 | Punjab, India',
     description: [
