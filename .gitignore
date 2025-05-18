@@ -43,5 +43,4 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
-.firebase/hosting.b3V0.cache
-.firebase/hosting.b3V0.cache
+.firebase/

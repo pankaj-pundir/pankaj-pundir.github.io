@@ -15,7 +15,7 @@ export const userInfo = {
     email: 'pankaj.pundir369@gmail.com',
     // medium: '', // Add medium link if available
   },
-  profileImage: "/images/profilepic.jpg", 
+  profileImage: "/images/profilePic.jpg", 
 };
 
 export const projects: Project[] = [
