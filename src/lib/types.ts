@@ -7,6 +7,7 @@ export interface Project {
   imageUrl?: string; // For single image projects
   imageUrls?: string[]; // For multiple image projects
   videoUrl?: string;
+  embedUrl?: string; // For embedding live sites
   tags: string[];
   liveLink?: string;
   sourceLink?: string;

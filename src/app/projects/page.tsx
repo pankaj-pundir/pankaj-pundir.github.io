@@ -15,6 +15,7 @@ function ProjectCard({ project }: { project: Project }) {
 
   let imageHint = "project abstract"; 
   if (project.title.toLowerCase().includes('cortex-bot')) imageHint = "stock market trading graph";
+  else if (project.title.toLowerCase().includes('online tools hub')) imageHint = "website screenshot tools";
   else if (project.title.toLowerCase().includes('poconet')) imageHint = "road pothole detection";
   else if (displayImageUrl?.includes('colorTuner')) imageHint = "software color palette";
   else if (displayImageUrl?.includes('graphReader')) imageHint = "data graph chart";
@@ -24,19 +25,18 @@ function ProjectCard({ project }: { project: Project }) {
   
   return (
     <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-      {displayImageUrl && !project.videoUrl && (
-        <div className="relative w-full h-48 md:h-56">
-          <img
-            src={displayImageUrl}
-            alt={project.title}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            data-ai-hint={imageHint}
+      <div className="relative w-full h-48 md:h-56 bg-black flex items-center justify-center">
+        {project.embedUrl ? (
+          <iframe
+            src={project.embedUrl}
+            title={`${project.title} - Live Preview`}
+            className="w-full h-full"
+            style={{ border: 0 }}
+            sandbox="allow-scripts allow-same-origin"
+            loading="lazy"
           />
-        </div>
-      )}
-      {project.videoUrl && (
-        <div className="relative w-full h-48 md:h-56 bg-black flex items-center justify-center">
-          {project.videoUrl.includes("youtube.com") || project.videoUrl.includes("youtu.be") ? (
+        ) : project.videoUrl ? (
+          project.videoUrl.includes("youtube.com") || project.videoUrl.includes("youtu.be") ? (
             <iframe
               width="100%"
               height="100%"
@@ -59,9 +59,20 @@ function ProjectCard({ project }: { project: Project }) {
               <Video className="absolute w-12 h-12 text-white/70" />
               <p className="absolute bottom-2 left-2 text-xs text-white bg-black/50 px-1 py-0.5 rounded">Video Preview</p>
             </>
-          )}
-        </div>
-      )}
+          )
+        ) : displayImageUrl ? (
+          <img
+            src={displayImageUrl}
+            alt={project.title}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            data-ai-hint={imageHint}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-muted">
+            <ExternalLink className="w-12 h-12 text-muted-foreground" />
+          </div>
+        )}
+      </div>
       <CardHeader>
         <CardTitle className="text-xl">{project.title}</CardTitle>
         {project.subheading && <p className="text-sm font-medium text-muted-foreground -mt-1">{project.subheading}</p>}

@@ -5,7 +5,7 @@ export const userInfo = {
   name: 'Pankaj Pundir',
   title: 'A.I enthusiast | Polymath',
   bio: "Hey, I'm Pankaj Pundir. I completed my B.Tech in Computer Science and Engineering. I'm skilled in Computer Vision, Deep Learning, coding, and logical thinking. Creating Desktop applications (Kivy) and web designing are hobbies of mine. The drive to create General AI is a core professional ambition. My technical skills include Python, C++, Computer Vision, Machine Learning, Deep Learning, and Kivy. I also enjoy watching movies, traveling, competitive coding, and have interests in meditation, hypnotism, and card tricks, which help me find patterns and understand people.",
-  skills: ['Python', 'C++', 'OpenCV', 'Git', 'PyTorch', 'PySpark', 'Angular', 'Data Science', 'Computer Vision', 'Deep Learning', 'Kivy', 'Machine Learning', 'Dash', 'Plotly', 'Airflow', 'Big Data Technologies', 'Backend Development', 'API Integration', 'Business Rule Engine', 'Regulatory Reporting', 'Workflow Development', 'Image Classification', 'Text Categorization', 'Assistive Technology', 'PHP', 'CSS', 'JavaScript', 'matplotlib', 'Software Engineering', 'Java', 'Golang', 'Kubernetes', 'Google Cloud', 'React', 'FastAPI', 'MongoDB', 'PostgreSQL', 'Redis', 'Microservices'],
+  skills: ['Python', 'C++', 'OpenCV', 'Git', 'PyTorch', 'PySpark', 'Angular', 'Data Science', 'Computer Vision', 'Deep Learning', 'Kivy', 'Machine Learning', 'Dash', 'Plotly', 'Airflow', 'Big Data Technologies', 'Backend Development', 'API Integration', 'Business Rule Engine', 'Regulatory Reporting', 'Workflow Development', 'Image Classification', 'Text Categorization', 'Assistive Technology', 'PHP', 'CSS', 'JavaScript', 'matplotlib', 'Software Engineering', 'Java', 'Golang', 'Kubernetes', 'Google Cloud', 'React', 'FastAPI', 'MongoDB', 'PostgreSQL', 'Redis', 'Microservices', 'Developer Tools'],
   socials: {
     github: 'https://github.com/pankaj-pundir',
     linkedin: 'https://www.linkedin.com/in/pankaj-pundir',
@@ -32,6 +32,16 @@ export const projects: Project[] = [
     tags: ['React', 'FastAPI', 'MongoDB', 'PostgreSQL', 'Redis', 'Google Cloud', 'Microservices', 'Algo Trading', 'Machine Learning', 'Technical Analysis'],
     liveLink: '#', 
     sourceLink: '#', 
+  },
+  {
+    id: 'online-tools-hub',
+    title: 'Online Tools Hub',
+    subheading: 'A Suite of Developer Utilities',
+    description: 'A one-stop destination featuring a collection of free, client-side JavaScript tools designed to assist developers with their daily tasks and boost productivity.',
+    embedUrl: 'https://onlinetoolshub.web.app/',
+    tags: ['JavaScript', 'Developer Tools', 'Web App', 'Utilities', 'React'],
+    liveLink: 'https://onlinetoolshub.web.app/',
+    sourceLink: 'https://github.com/pankaj-pundir/online-tools-hub-Dev-Craft-corner',
   },
   {
     id: '1',
