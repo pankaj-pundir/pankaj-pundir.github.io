@@ -41,7 +41,7 @@ export const projects: Project[] = [
     embedUrl: 'https://onlinetoolshub.web.app/',
     tags: ['JavaScript', 'Developer Tools', 'Web App', 'Utilities', 'React'],
     liveLink: 'https://onlinetoolshub.web.app/',
-    sourceLink: 'https://github.com/pankaj-pundir/online-tools-hub-Dev-Craft-corner',
+    sourceLink: 'https://github.com/pankaj-pundir/pankaj-pundir.github.io',
   },
   {
     id: '1',
