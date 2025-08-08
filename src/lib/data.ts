@@ -122,7 +122,7 @@ export const projects: Project[] = [
     title: 'My Strange Universe',
     subheading: 'A Gallery of AI Creations',
     description: 'An exploratory gallery showcasing a collection of unique and creative AI-generated experiments, from cosmic lullabies to stellar scribbles.',
-    imageUrls: ['/images/my-strange-universe/home.png'],
+ imageUrls: ['/images/strange-universe/strange-universe.png'],
     tags: ['AI', 'Creative AI', 'Web App', 'GenAI'],
     liveLink: 'https://my-strange-universe.web.app/',
     sourceLink: '#',
