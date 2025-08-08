@@ -34,6 +34,19 @@ export const projects: Project[] = [
     sourceLink: '#', 
   },
   {
+    id: 'zen-mode',
+    title: 'ZenMode',
+    subheading: 'AI-Powered Productivity App',
+    description: 'An intelligent productivity and task management application designed to help you focus. Features include smart task filtering, priority levels, time estimates, sub-task tracking, and versatile tagging for personal and work-related items.',
+    imageUrls: [
+      'https://placehold.co/600x400.png',
+      'https://placehold.co/600x400.png',
+    ],
+    tags: ['Productivity', 'AI', 'Task Manager', 'Web App', 'React'],
+    liveLink: 'https://zen-mode-ai.web.app/',
+    sourceLink: '#',
+  },
+  {
     id: 'online-tools-hub',
     title: 'Online Tools Hub',
     subheading: 'A Suite of Developer Utilities',
@@ -95,11 +108,20 @@ export const projects: Project[] = [
   }
 ];
 
+const companyLogos: Record<string, string> = {
+  'Google': 'https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_200_200/company-logo_200_200/0/1631311446380?e=1752710400&v=beta&t=_zAJJHkDhi7EvfyEGIEBojzv4ci4mmIAm6I_5Xqnua8',
+  'PhonePe': 'https://media.licdn.com/dms/image/v2/D560BAQHLOrShxWW33g/company-logo_200_200/company-logo_200_200/0/1732870614932/phonepe_internet_logo?e=1752710400&v=beta&t=z4qwuh1wuNPC1V7aVbhwzcLwXJ2rir_w55jsArglG9Y',
+  'GROWW': 'https://resources.groww.in/web-assets/img/website-logo/groww-logo-light.svg',
+  'BANK OF NEW YORK MELLON': 'https://nexen.bnymellon.com/app/shared-wl-assets/17/img/whitelabel/mmi/logo_bny.png',
+  'IIT ROPAR': 'http://www.iitrpr.ac.in/sites/default/files/image.jpg',
+};
+
+
 export const workHistory: WorkItem[] = [
   {
     id: 'google-swe3',
     company: 'Google',
-    companyLogoUrl: 'https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_200_200/company-logo_200_200/0/1631311446380?e=1752710400&v=beta&t=_zAJJHkDhi7EvfyEGIEBojzv4ci4mmIAm6I_5Xqnua8',
+    companyLogoUrl: companyLogos['Google'],
     role: 'Software Engineer 3 (L4)',
     duration: 'June 2024 - Present',
     description: [
@@ -111,7 +133,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'phonepe-sde2',
     company: 'PhonePe',
-    companyLogoUrl: 'https://media.licdn.com/dms/image/v2/D560BAQHLOrShxWW33g/company-logo_200_200/company-logo_200_200/0/1732870614932/phonepe_internet_logo?e=1752710400&v=beta&t=z4qwuh1wuNPC1V7aVbhwzcLwXJ2rir_w55jsArglG9Y',
+    companyLogoUrl: companyLogos['PhonePe'],
     role: 'SDE 2',
     duration: 'April 2024 - May 2024',
     description: [
@@ -123,7 +145,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'groww-sde2',
     company: 'GROWW',
-    companyLogoUrl: 'https://resources.groww.in/web-assets/img/website-logo/groww-logo-light.svg',
+    companyLogoUrl: companyLogos['GROWW'],
     role: 'Software Engineer 2 (Credit Team)',
     duration: 'Feb 2022 - March 2024 | Banglore, India',
     description: [
@@ -137,7 +159,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'bnym-swe',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: 'https://nexen.bnymellon.com/app/shared-wl-assets/17/img/whitelabel/mmi/logo_bny.png',
+    companyLogoUrl: companyLogos['BANK OF NEW YORK MELLON'],
     role: 'Software Engineer',
     duration: 'July 2020 - Feb 2022 | Pune, India',
     description: [
@@ -151,7 +173,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'bnym-intern',
     company: 'BANK OF NEW YORK MELLON',
-    companyLogoUrl: 'https://nexen.bnymellon.com/app/shared-wl-assets/17/img/whitelabel/mmi/logo_bny.png',
+    companyLogoUrl: companyLogos['BANK OF NEW YORK MELLON'],
     role: 'Software Engineer Intern',
     duration: 'Jan - June 2020 | Pune, India',
     description: [
@@ -164,7 +186,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'iitrpr-intern1',
     company: 'IIT ROPAR',
-    companyLogoUrl: 'http://www.iitrpr.ac.in/sites/default/files/image.jpg',
+    companyLogoUrl: companyLogos['IIT ROPAR'],
     role: 'Research Intern',
     duration: 'May 2019 – Jul 2019 | Punjab, India',
     description: [
@@ -177,7 +199,7 @@ export const workHistory: WorkItem[] = [
   {
     id: 'iitrpr-intern2',
     company: 'IIT ROPAR',
-    companyLogoUrl: 'http://www.iitrpr.ac.in/sites/default/files/image.jpg',
+    companyLogoUrl: companyLogos['IIT ROPAR'],
     role: 'Research Intern',
     duration: 'May 2018 – Jul 2018 | Punjab, India',
     description: [
