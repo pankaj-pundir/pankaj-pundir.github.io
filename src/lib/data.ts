@@ -39,8 +39,8 @@ export const projects: Project[] = [
     subheading: 'AI-Powered Productivity App',
     description: 'An intelligent productivity and task management application designed to help you focus. Features include smart task filtering, priority levels, time estimates, sub-task tracking, and versatile tagging for personal and work-related items.',
     imageUrls: [
-      'https://placehold.co/600x400.png',
-      'https://placehold.co/600x400.png',
+      '/images/zenmode/zenmode_home.png',
+      '/images/zenmode/zenmode_signin.png',
     ],
     tags: ['Productivity', 'AI', 'Task Manager', 'Web App', 'React'],
     liveLink: 'https://zen-mode-ai.web.app/',
@@ -106,6 +106,17 @@ export const projects: Project[] = [
     researchPaperLink: 'https://link.springer.com/chapter/10.1007/978-3-030-67187-7_31',
     sourceLink: '#', // Add source link if available
   }
+ ,
+  {
+    id: 'mesmo-games',
+    title: 'Mesmo Games',
+    subheading: 'Collection of mini-games',
+    description: 'A collection of mini-games built with web technologies.',
+    imageUrls: ['/images/mesmo-games/home_page.png'],
+    tags: ['JavaScript', 'Web App', 'Games'],
+    liveLink: 'https://mesmo-games.web.app/',
+    sourceLink: '#',
+  },
 ];
 
 const companyLogos: Record<string, string> = {
