@@ -545,12 +545,9 @@ const sidebarMenuButtonVariants = cva(
   }
 )
 
-type SidebarMenuButtonElement = HTMLButtonElement | HTMLAnchorElement;
-
 const SidebarMenuButton = React.forwardRef<
-  SidebarMenuButtonElement, // Allow both button and anchor elements
-  React.ComponentProps<"button"> & React.ComponentProps<"a"> & { // Merge props
-    as?: "button" | "a"; // Explicitly allow choosing the element type
+  HTMLButtonElement,
+  React.ComponentProps<"button"> & {
     asChild?: boolean
     isActive?: boolean
     tooltip?: string | React.ComponentProps<typeof TooltipContent>
@@ -558,28 +555,17 @@ const SidebarMenuButton = React.forwardRef<
 >(
   (
     {
-      as: CompOverride, // Use 'as' to determine the component type
       asChild = false,
       isActive = false,
       variant = "default",
       size = "default",
       tooltip,
       className,
-      href, // Accept href prop
       ...props
     },
     ref
   ) => {
-    // Determine the component to render: 'a' if href is present, otherwise 'button', unless overridden by 'as' or 'asChild'
-    let Comp: React.ElementType = "button";
-    if (asChild) {
-      Comp = Slot;
-    } else if (CompOverride) {
-      Comp = CompOverride;
-    } else if (href) {
-      Comp = "a";
-    }
-    
+    const Comp = asChild ? Slot : "button"
     const { isMobile, state } = useSidebar()
 
     const button = (
@@ -589,8 +575,7 @@ const SidebarMenuButton = React.forwardRef<
         data-size={size}
         data-active={isActive}
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
-        href={href} // Pass href if Comp is 'a'
-        {...props} // Spread remaining props (like onClick for button, or target for a)
+        {...props}
       />
     )
 
@@ -790,4 +775,5 @@ export {
 }
 
     
+
 

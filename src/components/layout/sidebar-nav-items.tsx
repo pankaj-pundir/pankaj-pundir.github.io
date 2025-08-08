@@ -22,10 +22,8 @@ export default function SidebarNavItems() {
     <SidebarMenu>
       {navItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link legacyBehavior passHref href={item.href}>
+          <Link href={item.href} passHref>
             <SidebarMenuButton
-              as="a" // Explicitly render SidebarMenuButton as an anchor tag
-              href={item.href} // Pass href to ensure it's treated as a link by SidebarMenuButton
               className={cn(
                 pathname === item.href ? 'bg-sidebar-accent text-sidebar-accent-foreground' : 'hover:bg-sidebar-accent/80'
               )}
