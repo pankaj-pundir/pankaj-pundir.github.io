@@ -120,8 +120,8 @@ export const projects: Project[] = [
 ];
 
 const companyLogos: Record<string, string> = {
-  'Google': 'https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_200_200/company-logo_200_200/0/1631311446380?e=1752710400&v=beta&t=_zAJJHkDhi7EvfyEGIEBojzv4ci4mmIAm6I_5Xqnua8',
-  'PhonePe': 'https://media.licdn.com/dms/image/v2/D560BAQHLOrShxWW33g/company-logo_200_200/company-logo_200_200/0/1732870614932/phonepe_internet_logo?e=1752710400&v=beta&t=z4qwuh1wuNPC1V7aVbhwzcLwXJ2rir_w55jsArglG9Y',
+  'Google': 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
+  'PhonePe': 'https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg',
   'GROWW': 'https://resources.groww.in/web-assets/img/website-logo/groww-logo-light.svg',
   'BANK OF NEW YORK MELLON': 'https://nexen.bnymellon.com/app/shared-wl-assets/17/img/whitelabel/mmi/logo_bny.png',
   'IIT ROPAR': 'http://www.iitrpr.ac.in/sites/default/files/image.jpg',
